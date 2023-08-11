@@ -19,5 +19,17 @@ Route::get('/', function () {
 });
 
 Route::get('/index', function () {
-    return view('User.index');
+    return view('user.index');
+});
+
+Route::get('/single',function(){
+    return view('user.single');
+});
+
+Route::get('/login',function(){
+    return view('user.Login.login');
+});
+
+Route::get('/register',function(){
+    return view('user.Login.register');
 });
