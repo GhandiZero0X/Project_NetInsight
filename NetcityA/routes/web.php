@@ -14,22 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// ROUTE AUTH USER
+Route::get('/login', function () {
+    return view('pages.user.auth.login');
+});
+
+Route::get('/register', function () {
+    return view('pages.user.auth.register');
+});
+
+
+// ROUTE CONTENT USER
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.user.content.home');
 });
 
-Route::get('/index', function () {
-    return view('user.index');
-});
-
-Route::get('/single',function(){
-    return view('user.single');
-});
-
-Route::get('/login',function(){
-    return view('user.Login.login');
-});
-
-Route::get('/register',function(){
-    return view('user.Login.register');
+Route::get('/modul', function () {
+    return view('pages.user.content.modul');
 });
