@@ -22,25 +22,50 @@
             <form action="" method="POST">
                 @csrf
             <h1 class="title">REGISTER</h1>
+
             <div class="text-input">
                 <i class="ri-user-fill"></i>
-                <input type="text" placeholder="Email">
+                <input type="text" name="name" placeholder="Name">
+                @error('name')
+                <div class='invalid-feedback'>
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+            <div class="text-input">
+                <i class="ri-user-fill"></i>
+                <input type="email" name="email" placeholder="Email">
+                @error('email')
+                <div class='invalid-feedback'>
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
             <div class="text-input">
                 <i class="ri-lock-fill"></i>
-                <input type="password" placeholder="Password">
+                <input type="password" name="password" placeholder="Password">
+                @error('password')
+                <div class='invalid-feedback'>
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
 
             <div class="text-input">
 
             <i class="ri-phone-fill"></i>
-                <input type="text" placeholder="No Whatsapp">
+                <input type="text" name="no_telp" placeholder="No Whatsapp">
+                @error('no_telp')
+                <div class='invalid-feedback'>
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
 
             <button class="login-btn">Register</button>
 
             <div class="create">
-                <a href="#">Login </a>
+                <a href={{ route('login') }}>Login </a>
                 <i class="ri-arrow-right-fill"></i>
             </div>
             </form>

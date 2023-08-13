@@ -20,10 +20,10 @@
                                     class="text-primary">.</span></a>
                         </div>
                         <div class="col-8 text-center">
-                            <form action="#" class="search-form d-inline-block d-lg-none">
+                            {{-- <form action="#" class="search-form d-inline-block d-lg-none">
                                 <input type="text" class="form-control" placeholder="Search...">
                                 <span class="bi-search"></span>
-                            </form>
+                            </form> --}}
 
                             <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
                                 <li class="active"><a href="index.html">Home</a></li>
@@ -51,6 +51,7 @@
                                 <li><a href="category.html">Culture</a></li>
                                 <li><a href="category.html">Business</a></li>
                                 <li><a href="category.html">Politics</a></li>
+                                <li><a href={{ route('login') }}>LOGIN</a></li>
                             </ul>
                         </div>
                         <div class="col-2 text-end">
@@ -58,10 +59,10 @@
                                 class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
                                 <span></span>
                             </a>
-                            <form action="#" class="search-form d-none d-lg-inline-block">
+                            {{-- <form action="#" class="search-form d-none d-lg-inline-block">
                                 <input type="text" class="form-control" placeholder="Search...">
                                 <span class="bi-search"></span>
-                            </form>
+                            </form> --}}
                         </div>
                     </div>
                 </div>

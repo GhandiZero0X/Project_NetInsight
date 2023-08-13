@@ -24,18 +24,18 @@
             <h1 class="title">LOGIN</h1>
             <div class="text-input">
                 <i class="ri-user-fill"></i>
-                <input type="text" placeholder="Email">
+                <input type="email" name="email" placeholder="Email">
             </div>
             <div class="text-input">
                 <i class="ri-lock-fill"></i>
-                <input type="password" placeholder="Password">
+                <input type="password" name='password' placeholder="Password">
 
             </div>
 
             <button class="login-btn">LOGIN</button>
             <a href="#" class="forgot">Forgot Username/Password?</a>
             <div class="create">
-                <a href="#">Create Your Account</a>
+                <a href="{{ route('register') }}">Create Your Account</a>
                 <i class="ri-arrow-right-fill"></i>
             </div>
             </form>

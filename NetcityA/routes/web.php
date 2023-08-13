@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserController;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\Facades\Route;
 
@@ -14,22 +17,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/index', function () {
-    return view('user.index');
-});
+
+
+// ----------------------   USER  -----------------------------
+Route::get('/',[UserController::class,'indexuser'])->name('user.home');
 
 Route::get('/single',function(){
     return view('user.single');
 });
 
-Route::get('/login',function(){
-    return view('user.Login.login');
-});
 
-Route::get('/register',function(){
-    return view('user.Login.register');
-});
+Route::get('/login',[LoginController::class,'index'])->name('login');
+Route::post('/login',[LoginController::class,'login']);
+
+
+Route::get('/register',[RegisterController::class,'index'])->name('register');
+Route::post('/register',[RegisterController::class,'register']);
+
+
+//---------------------------------------------------------------
