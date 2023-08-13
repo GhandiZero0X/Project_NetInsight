@@ -17,23 +17,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
-
 // ----------------------   USER  -----------------------------
-Route::get('/',[UserController::class,'indexuser'])->name('user.home');
 
-Route::get('/single',function(){
-    return view('user.single');
+//homepage
+Route::middleware(['guest'])->group(function(){
+    Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
+Route::get('/', [UserController::class, 'indexUser'])->name('user.home');
 });
 
+Route::middleware(['auth'])->group(function () {
 
-Route::get('/login',[LoginController::class,'index'])->name('login');
-Route::post('/login',[LoginController::class,'login']);
+});
+Route::get('/', [UserController::class, 'indexUser'])->name('user.home');
+Route::get('/admin',[UserController::class,'indexAdmin'])->name('admin.home');
+
+// Login & Register
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
-Route::get('/register',[RegisterController::class,'index'])->name('register');
-Route::post('/register',[RegisterController::class,'register']);
 
 
+
+
+Route::get('/single', function () {
+    return view('user.single');
+});
 //---------------------------------------------------------------

@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use illuminate\Support\Facades\Auth;
+use Illuminate\Http\JsonResponse;
 class LoginController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
     public function index(){
-        return view('user.login.login');
+        return view('pages.user.auth.login');
     }
 
     public function login(Request $request){
@@ -27,15 +32,35 @@ class LoginController extends Controller
 
         if(Auth::attempt($infologin)){
             if(Auth::user()->role == '0'){
-            return redirect()->route('home')->with('success','Berhasil login');
+            return redirect()->route('user.home')->with('success','Berhasil login');
         }
-            if(Auth::user()->role=='1'){
-                return redirect()->route('admin')->with('success','Berhasil Login');
+            elseif(Auth::user()->role=='1'){
+                return redirect()->route('admin.home')->with('success','Berhasil Login');
             }
     }
 
         else{
-            return redirect('')->withErrors('Email dan Password salah')->withInput();
+            return redirect('')->withErrors('Email dan Password Salah')->withInput();
         }
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        if ($response = $this->loggedOut($request)) {
+            return $response;
+        }
+
+        return $request->wantsJson()
+            ? new JsonResponse([], 204)
+            : redirect('/login');
+    }
+    protected function loggedOut(Request $request)
+    {
+        //
     }
 }

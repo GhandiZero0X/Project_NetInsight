@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 class RegisterController extends Controller
 {
     public function index(){
-        return view('user.login.register');
+        return view('pages.user.auth.register');
     }
 
     public function register(Request $request){
         $request->validate([
             'name'=>'required',
             'email'=>'required|email|unique:users',
-            'password'=>'required|min:8',
+            'password'=>'required|min:8|confirmed',
             'no_telp'=>'required',
         ]);
 
@@ -36,7 +36,7 @@ class RegisterController extends Controller
         ]);
 
          if($validated){
-             return redirect()->route('login')->with('success','Registrasi berhasil');
+             return redirect()->route('login')->with('success','Registrasi berhasil!');
          }
 
     }

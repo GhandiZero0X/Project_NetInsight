@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.css">
 
 </head>
 <body>
@@ -51,7 +53,23 @@
                                 <li><a href="category.html">Culture</a></li>
                                 <li><a href="category.html">Business</a></li>
                                 <li><a href="category.html">Politics</a></li>
+                                @guest
+                                    @if(Route::has('login'))
                                 <li><a href={{ route('login') }}>LOGIN</a></li>
+                                @endif
+                                @else
+                                <li><a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                  document.getElementById('logout-form').submit();">
+                                     {{ __('Logout') }}
+                                 </a></li>
+
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                                @endguest
                             </ul>
                         </div>
                         <div class="col-2 text-end">

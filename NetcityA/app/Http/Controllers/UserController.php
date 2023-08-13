@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function indexUser(){
-        return view('user.home');
+        return view('pages.user.content.home');
+    }
+
+    public function indexAdmin(){
+        return view('pages.admin.home');
     }
 }
