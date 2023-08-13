@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/glightbox.min.css">
     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/bootstrap.css"
     <link rel="stylesheet" href="css/flatpickr.min.css">
 
     <title>Blogy &mdash; Free Bootstrap 5 Website Template by Untree.co</title>
