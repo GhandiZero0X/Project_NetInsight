@@ -13,7 +13,7 @@
     </head>
 <body>
 
-    @include('partials.navbaradmin')
+    @include('partials.admin.navbar')
     @yield('content')
 
 
@@ -28,6 +28,6 @@
     <script src="cssjsadmin/js/datatables-simple-demo.js"></script>
 
 
-    
+
 </body>
 </html>

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreign('id_kategori')->references('id_kategori')->on('kategori')->onDelete('CASCADE');
             $table->string('nama_modul');
             $table->string('gambar_modul')->default('');
+            $table->string('download_modul')->default('');
             $table->text('isi_modul');
             $table->timestamps();
         });

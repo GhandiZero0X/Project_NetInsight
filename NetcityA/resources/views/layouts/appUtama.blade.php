@@ -44,11 +44,11 @@
         <div class="site-mobile-menu-body"></div>
     </div>
 
-    @include('partials.navbar')
+    @include('partials.user.navbar')
 
     @yield('content')
 
-    @include('partials.footer')
+    @include('partials.user.footer')
 
     <!-- Preloader -->
     <div id="overlayer"></div>

@@ -40,7 +40,7 @@ class LoginController extends Controller
     }
 
         else{
-            return redirect('')->withErrors('Email dan Password Salah')->withInput();
+            return redirect()->route('login')->withErrors('Email dan Password Salah')->withInput();
         }
     }
 

@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kategori;
-use App\Http\Requests\StoreKategoriRequest;
-use App\Http\Requests\UpdateKategoriRequest;
+use App\Models\modul;
+use App\Http\Requests\StoremodulRequest;
+use App\Http\Requests\UpdatemodulRequest;
 
-class KategoriController extends Controller
+class ModulController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('pages.admin.table.kategori.index');
+        return view('pages.admin.table.modul.index');
     }
 
     /**
@@ -21,13 +21,13 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreKategoriRequest $request)
+    public function store(StoremodulRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class KategoriController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Kategori $kategori)
+    public function show(modul $modul)
     {
         //
     }
@@ -43,7 +43,7 @@ class KategoriController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Kategori $kategori)
+    public function edit(modul $modul)
     {
         //
     }
@@ -51,7 +51,7 @@ class KategoriController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateKategoriRequest $request, Kategori $kategori)
+    public function update(UpdatemodulRequest $request, modul $modul)
     {
         //
     }
@@ -59,7 +59,7 @@ class KategoriController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Kategori $kategori)
+    public function destroy(modul $modul)
     {
         //
     }
