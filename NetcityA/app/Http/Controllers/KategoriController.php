@@ -16,12 +16,17 @@ class KategoriController extends Controller
         return view('pages.admin.table.kategori.index');
     }
 
+    public function showNavbar()
+    {
+        $categories = Kategori::all();
+        return view('partials.user.navbar', compact('categories'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        
     }
 
     /**

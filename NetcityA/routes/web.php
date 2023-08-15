@@ -22,16 +22,16 @@ use Illuminate\Support\Facades\Route;
 // ----------------------   USER  -----------------------------
 
 //homepage
-Route::middleware(['guest'])->group(function(){
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::post('/register', [RegisterController::class, 'register']);
- Route::get('/', [UserController::class, 'indexUser'])->name('user.home');
+Route::middleware(['guest'])->group(function () {
+    Route::get('/login', [LoginController::class, 'index'])->name('login');
+    Route::post('/login', [LoginController::class, 'login']);
+    Route::get('/register', [RegisterController::class, 'index'])->name('register');
+    Route::post('/register', [RegisterController::class, 'register']);
+    Route::get('/', [UserController::class, 'indexUser'])->name('user.home');
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin',[UserController::class,'indexAdmin'])->name('admin.home');
+    Route::get('/admin', [UserController::class, 'indexAdmin'])->name('admin.home');
     Route::get('/', [UserController::class, 'indexUser'])->name('user.home');
     // Login & Register
 
@@ -40,8 +40,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/single', function () {
         return view('user.single');
     });
-    Route::get('/kategori',[KategoriController::class,'index'])->name('kategori.index');
-    Route::get('/modul',[ModulController::class,'index'])->name('modul.index');
+    Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
+    Route::get('/modul', [ModulController::class, 'index'])->name('modul.index');
 });
 Route::get('/', [UserController::class, 'indexUser'])->name('user.home');
 
