@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('modul', function (Blueprint $table) {
-            $table->id('id_modul');
-            $table->unsignedBigInteger('id_kategori');
-            $table->foreign('id_kategori')->references('id_kategori')->on('kategori')->onDelete('CASCADE');
+            $table->id()->autoIncrement();
+            $table->foreignId('users_id')->references('id')->on('users');
+            $table->foreignId('kategoris_id')->references('id')->on('kategoris');
             $table->string('nama_modul');
             $table->string('gambar_modul')->default('');
             $table->string('download_modul')->default('');

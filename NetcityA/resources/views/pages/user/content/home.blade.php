@@ -1,8 +1,6 @@
 @extends('layouts.appUtama')
 
 @section('content')
-
-
     <!-- Start retroy layout blog posts -->
     <section class="section bg-light">
 
