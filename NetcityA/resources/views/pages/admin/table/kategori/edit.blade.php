@@ -49,10 +49,6 @@
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4"> Kategori Tables</h1>
-
-                    @if (session('succes'))
-                        <div class="alert alert-success"> Berhasil ! </div>
-                    @endif
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Dashboard</a></li>
                         <li class="breadcrumb-item active">Tables</li>
@@ -69,63 +65,27 @@
                             <i class="fas fa-table me-1"></i>
                             Kategori Table
                         </div>
-
-                        <div class="card-body">
-                            <a href="{{ route('kategori.create') }}"> <button type="button"
-                                    class="btn btn-primary">Create</button><br></a>
-
-                            <table id="datatablesSimple">
-
-
-                                <thead>
-
-                                    <tr>
-                                        <th>id</th>
-                                        <th>Nama_Kategori</th>
-                                        <th> Created at </th>
-                                        <th> Update at </th>
-                                        <th>Actions</th>
-
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>id</th>
-                                        <th>Nama_Kategori</th>
-                                        <th> Created at </th>
-                                        <th> Update at </th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                    @foreach ($kategoris as $kategori)
-                                        <tr>
-                                            <td>{{ $kategori->id_kategori }}</td>
-                                            <td>{{ $kategori->nama_kategori }}</td>
-                                            <td> {{ $kategori->created_at }}</td>
-                                            <td>{{ $kategori->updated_at }}</td>
-                                            <td>
-
-                                                <a href="{{ route('kategori.edit', $kategori->id_kategori) }}"><button
-                                                        type="submit" class="btn btn-success"><i class="bi bi-pencil-square"></i></button></a>
-                                                <form action="{{ route('kategori.destroy', $kategori->id_kategori) }}"
-                                                    method="POST" style="display: inline-block;">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" onclick="return confirm('Are you sure ?')"
-                                                    class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                                                    
-
-                                                </form>
-
-                                            </td>
-
-                                        </tr>
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
                                     @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <div class="card-body">
+                            <form action="{{ route('kategori.update', $kategoris->id_kategori) }}" method="post"
+                                enctype="multipart/form-data">
+                                @csrf
+                                @method('PUT')
+                                <label>Name Kategori</label></br>
 
-                                </tbody>
+                                <input type="text" name="nama_kategori" id="name" class="form-control"
+                                    value="{{ old('nama_kategori', $kategoris->nama_kategori) }}"> </br>
+                                <input type="submit" value="Save" class="btn btn-success"></br>
 
-                            </table>
+                            </form>
                         </div>
                     </div>
                 </div>

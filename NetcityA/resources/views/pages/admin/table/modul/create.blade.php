@@ -48,18 +48,14 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4"> Kategori Tables</h1>
-
-                    @if (session('succes'))
-                        <div class="alert alert-success"> Berhasil ! </div>
-                    @endif
+                    <h1 class="mt-4"> Modul Tables</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Dashboard</a></li>
                         <li class="breadcrumb-item active">Tables</li>
                     </ol>
                     <div class="card mb-4">
                         <div class="card-body">
-                            Input, Update , Delete Kategori Tables "jangan sembarangan delete"
+                            Input, Update , Delete Modul Tables "jangan sembarangan delete"
 
                             .
                         </div>
@@ -67,65 +63,41 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Kategori Table
+                            Modul Table
                         </div>
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
 
                         <div class="card-body">
-                            <a href="{{ route('kategori.create') }}"> <button type="button"
-                                    class="btn btn-primary">Create</button><br></a>
+                            <form action="{{ route('modul.store') }}" method="post" enctype="multipart/form-data">
+                                @csrf
 
-                            <table id="datatablesSimple">
-
-
-                                <thead>
-
-                                    <tr>
-                                        <th>id</th>
-                                        <th>Nama_Kategori</th>
-                                        <th> Created at </th>
-                                        <th> Update at </th>
-                                        <th>Actions</th>
-
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>id</th>
-                                        <th>Nama_Kategori</th>
-                                        <th> Created at </th>
-                                        <th> Update at </th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                    @foreach ($kategoris as $kategori)
-                                        <tr>
-                                            <td>{{ $kategori->id_kategori }}</td>
-                                            <td>{{ $kategori->nama_kategori }}</td>
-                                            <td> {{ $kategori->created_at }}</td>
-                                            <td>{{ $kategori->updated_at }}</td>
-                                            <td>
-
-                                                <a href="{{ route('kategori.edit', $kategori->id_kategori) }}"><button
-                                                        type="submit" class="btn btn-success"><i class="bi bi-pencil-square"></i></button></a>
-                                                <form action="{{ route('kategori.destroy', $kategori->id_kategori) }}"
-                                                    method="POST" style="display: inline-block;">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" onclick="return confirm('Are you sure ?')"
-                                                    class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                                                    
-
-                                                </form>
-
-                                            </td>
-
-                                        </tr>
+                                <label>Nama Modul</label></br>
+                                <input type="text" name="nama_modul" id="name" class="form-control"></br>
+                                <label>Name Kategori</label></br>
+                                <select class="form-select" name="id_kategori" aria-label="Default select example">
+                                    <option selected>Pilih Kategori</option>
+                                    @foreach($kategoris as $kategori)
+                                    <option value="{{ $kategori->id_kategori }}">{{ $kategori->nama_kategori }}</option>
                                     @endforeach
+                                  </select><br>
+                                <label>Isi Modul</label></br>
+                                <textarea type="text" name="isi_modul" class="form-control"></textarea></br>
+                                <input type="hidden" name="id_user" value="{{ old('id_user',$users->id) }}">
+                                <label>Input Gambar</label></br>
+                                <input type="file" name="gambar_modul" id="name" class="form-control"></br>
+                                <label>Input Modul</label></br>
+                                <input type="file" name="download_modul" class="form-control"></br>
+                                <input type="submit" value="Save" class="btn btn-success"></br>
 
-                                </tbody>
-
-                            </table>
+                            </form>
                         </div>
                     </div>
                 </div>

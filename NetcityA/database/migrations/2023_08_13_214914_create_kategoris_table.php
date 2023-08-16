@@ -9,16 +9,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('kategoris', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+            $table->id('id_kategori')->autoIncrement();
             $table->string('nama_kategori', 100);
             $table->timestamps();
         });
 
-        DB::table('kategoris')->insert([
-            ['nama_kategori' => 'Kategori 1', 'created_at' => now(), 'updated_at' => now()],
-            ['nama_kategori' => 'Kategori 2', 'created_at' => now(), 'updated_at' => now()],
-            ['nama_kategori' => 'Kategori 3', 'created_at' => now(), 'updated_at' => now()]
-        ]);
+
     }
 
     public function down(): void

@@ -33,15 +33,33 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [UserController::class, 'indexAdmin'])->name('admin.home');
     Route::get('/', [UserController::class, 'indexUser'])->name('user.home');
-    // Login & Register
+
 
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
     Route::get('/single', function () {
         return view('user.single');
     });
+
+//kategori
     Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
+
+//CREATE
+    Route::get('/kategori/create',[KategoriController::class,'create'])->name('kategori.create');
+    Route::post('/kategori/create',[KategoriController::class,'store'])->name('kategori.store');
+
+//UPDATE
+    Route::get('/kategori/{id}',[KategoriController::class,'edit'])->name('kategori.edit');
+    Route::put('/kategori/{id}',[KategoriController::class,'update'])->name('kategori.update');
+    Route::delete('/kategori/{id}',[KategoriController::class,'destroy'])->name('kategori.destroy');
+
+
+// MDOUL
     Route::get('/modul', [ModulController::class, 'index'])->name('modul.index');
+    Route::get('/modul/create',[ModulController::class,'create'])->name('modul.create');
+    Route::post('/modul/store',[ModulController::class,'store'])->name('modul.store');
+
+//CREATE
 });
 Route::get('/', [UserController::class, 'indexUser'])->name('user.home');
 

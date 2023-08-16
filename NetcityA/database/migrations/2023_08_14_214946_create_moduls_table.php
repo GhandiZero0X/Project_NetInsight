@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('modul', function (Blueprint $table) {
-            $table->id()->autoIncrement();
-            $table->foreignId('users_id')->references('id')->on('users');
-            $table->foreignId('kategoris_id')->references('id')->on('kategoris');
-            $table->string('nama_modul');
+        Schema::create('moduls', function (Blueprint $table) {
+            $table->id('id_modul')->autoIncrement();
+            $table->foreignId('id_user')->references('id')->on('users');
+            $table->foreignId('id_kategori')->references('id_kategori')->on('kategoris');
+            $table->string('nama_modul',100);
             $table->string('gambar_modul')->default('');
             $table->string('download_modul')->default('');
-            $table->text('isi_modul');
+            $table->text('isi_modul',1000);
             $table->timestamps();
         });
     }
@@ -28,7 +28,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('kategori',function(Blueprint $table){
+        Schema::table('kategoris',function(Blueprint $table){
             $table->dropForeign('kategori_id_modul_foreign');
         });
         Schema::dropIfExists('modul');
