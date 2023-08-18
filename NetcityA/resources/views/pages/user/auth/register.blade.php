@@ -9,9 +9,10 @@
                         <div class="row g-0">
                             <div class="col-lg-6">
                                 <div class="card-body p-md-5 mx-md-4">
-
                                     <div class="text-center">
-                                        <img src="#" style="width: 185px;" alt="logo">
+                                        <div class="logo-circle">
+                                            <img src="images/LogoNetCity.jpeg" alt="logo">
+                                        </div>
                                         <h4 class="mt-1 pb-1">Net<span style="color: rgba(206, 245, 61, 0.8)">Insight</span>
                                         </h4>
                                         <p class="small mb-5">
@@ -42,7 +43,7 @@
                                         @endif
                                         <div class="form-outline mb-4">
                                             <input type="text" name="no_telp" id="form2Example22" class="form-control"
-                                                placeholder="no_telp" />
+                                                placeholder="Phone Number" />
                                             {{-- <label class="form-label" for="form2Example22">No telp</label> --}}
                                         </div>
                                         @if ($errors->has('password'))

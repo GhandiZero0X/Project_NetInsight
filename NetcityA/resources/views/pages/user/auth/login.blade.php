@@ -9,21 +9,21 @@
                         <div class="row g-0">
                             <div class="col-lg-6">
                                 <div class="card-body p-md-5 mx-md-4">
-
                                     <div class="text-center">
-                                        <img src="#"
-                                            style="width: 185px;" alt="logo">
-                                        <h4 class="mt-1 pb-1">Net<span style="color: rgba(206, 245, 61, 0.8)">Insight</span></h4>
+                                        <div class="logo-circle">
+                                            <img src="images/LogoNetCity.jpeg" alt="logo">
+                                        </div>
+                                        <h4 class="mt-4 pb-1">Net<span style="color: rgba(206, 245, 61, 0.8)">Insight</span>
+                                        </h4>
                                         <p class="small mb-3">
-                                            <b>Part of <a href="https://www.instagram.com/netcitysurabaya/" style="color: rgba(206, 245, 61, 0.8);">NetCity</a></b>
-                                        </p> <!-- Ubah ukuran dan letak tulisan Part of Net City -->
+                                            <b>Part of <a href="https://www.instagram.com/netcitysurabaya/"
+                                                    style="color: rgba(206, 245, 61, 0.8);">NetCity</a></b>
+                                        </p>
                                     </div>
-
-
 
                                     <form action="" method="POST">
                                         @csrf
-                                        <p>Please login to your account</p>
+                                        <p class="font-weight-bold">Please login to your account</p>
 
                                         @if (session('success') == 'Registrasi berhasil!')
                                             <div class="alert alert-success"> Registrasi Berhasil!</div>
@@ -49,19 +49,18 @@
                                         <div class="form-outline mb-4">
                                             <input type="password" name="password" id="form2Example22" class="form-control"
                                                 placeholder="Password" />
-
                                         </div>
 
                                         <div class="text-center pt-1 mb-5 pb-1">
-                                            <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                                            <button class="btn btn-primary btn-block fa-lg mb-3"
                                                 type="submit">Login</button>
                                             {{-- <a class="text-muted" href="#!">Forgot password?</a> --}}
                                         </div>
                                         <hr>
                                         <div class="d-flex align-items-center justify-content-center pb-4">
-                                            <p class="mb-0 me-2 ">Don't have an account?</p>
+                                            <p class="mb-0 me-2">Don't have an account?</p>
                                             <a href="{{ route('register') }}"><button type="button"
-                                                    class="btn btn-outline-danger ms-2 ">Create new</button></a>
+                                                    class="btn btn-outline-danger ms-2 ">Create Account</button></a>
                                         </div>
 
                                     </form>

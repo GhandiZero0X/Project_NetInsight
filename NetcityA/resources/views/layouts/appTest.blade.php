@@ -19,29 +19,17 @@
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="stylesheet" href="css/tiny-slider.css">
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/glightbox.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/flatpickr.min.css">
 
-    <title>Net Insight</title>
+    <link rel="stylesheet" href="css/flatpickr.min.css">
 </head>
 
 <body>
 
-    @include('partials.user.navbar')
-
-    @yield('content')
-
-    @include('partials.user.footer')
-
-    <!-- Preloader -->
     <div id="overlayer"></div>
     <div class="loader">
         <div class="spinner-border text-primary" role="status">
@@ -49,14 +37,20 @@
         </div>
     </div>
 
-    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('js/tiny-slider.js') }}"></script>
-    <script src="{{ asset('js/flatpickr.min.js') }}"></script>
-    <script src="{{ asset('js/aos.js') }}"></script>
-    <script src="{{ asset('js/glightbox.min.js') }}"></script>
-    <script src="{{ asset('js/navbar.js') }}"></script>
-    <script src="{{ asset('js/counter.js') }}"></script>
-    <script src="{{ asset('js/custom.js') }}"></script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+
+    <script src="js/flatpickr.min.js"></script>
+
+
+    <script src="js/aos.js"></script>
+    <script src="js/glightbox.min.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/custom.js"></script>
+
+
 </body>
 
 </html>
