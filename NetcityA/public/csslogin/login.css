@@ -14,17 +14,17 @@
 
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     /* background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593); */
-    background-color: black !important;
+    background-color: black;
 }
 
-.btn-hover {
+/* .btn-hover {
     transition: background-color 0.3s, color 0.3s;
 }
 
 .btn-hover:hover {
     background-color: white;
     color: black;
-}
+} */
 
 @media (min-width: 768px) {
     .gradient-form {
@@ -36,4 +36,34 @@
         border-top-right-radius: 0.3rem;
         border-bottom-right-radius: 0.3rem;
     }
+}
+
+.logo-circle {
+    width: 185px;
+    height: 185px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(206, 245, 61, 0.8);
+    margin-bottom: 15px;
+}
+
+.logo-circle img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.btn-primary {
+    color: white;
+    background-color: black;
+    border-color: black;
+}
+.btn-primary:hover {
+    color: black;
+    background-color: rgba(206, 245, 61, 0.8);
+    border-color: rgba(206, 245, 61, 0.8);
+    transition: background-color 0.3s, color 0.3s;
 }

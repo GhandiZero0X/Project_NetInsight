@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 // ----------------------   USER  -----------------------------
 
-//homepage
+//homepage sebagai guest
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/login', [LoginController::class, 'login']);
@@ -31,39 +31,53 @@ Route::middleware(['guest'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin', [UserController::class, 'indexAdmin'])->name('admin.home');
+    // ===================================
+    // Routes User :
+    // ===================================
+
+    // Halaman Home User
     Route::get('/', [UserController::class, 'indexUser'])->name('user.home');
-
-
+    //Halaman Modul User
+    Route::get('/Modul', function () {
+        return view('pages.user.content.modul');
+    })->name('user.modul');
+    //Halaman Kategori User
+    Route::get('/Kategori', function () {
+        return view('pages.user.content.kategori');
+    })->name('user.kategori');
+    //Logout User
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-    Route::get('/single', function () {
-        return view('user.single');
-    });
 
-//kategori
+
+    // ===================================
+    // Routes Admin :
+    // ===================================
+
+    //Home Admin
+    Route::get('/admin', [UserController::class, 'indexAdmin'])->name('admin.home');
+    //kategori Admin
     Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
 
-//CREATE
-    Route::get('/kategori/create',[KategoriController::class,'create'])->name('kategori.create');
-    Route::post('/kategori/create',[KategoriController::class,'store'])->name('kategori.store');
+    //CREATE Admin
+    Route::get('/kategori/create', [KategoriController::class, 'create'])->name('kategori.create');
+    Route::post('/kategori/create', [KategoriController::class, 'store'])->name('kategori.store');
 
-//UPDATE
-    Route::get('/kategori/{id}',[KategoriController::class,'edit'])->name('kategori.edit');
-    Route::put('/kategori/{id}',[KategoriController::class,'update'])->name('kategori.update');
-    Route::delete('/kategori/{id}',[KategoriController::class,'destroy'])->name('kategori.destroy');
+    //UPDATE Admin
+    Route::get('/kategori/{id}', [KategoriController::class, 'edit'])->name('kategori.edit');
+    Route::put('/kategori/{id}', [KategoriController::class, 'update'])->name('kategori.update');
+    Route::delete('/kategori/{id}', [KategoriController::class, 'destroy'])->name('kategori.destroy');
 
 
-// MDOUL
+    // MDOUL Admin
     Route::get('/modul', [ModulController::class, 'index'])->name('modul.index');
-    Route::get('/modul/create',[ModulController::class,'create'])->name('modul.create');
-    Route::post('/modul/store',[ModulController::class,'store'])->name('modul.store');
+    Route::get('/modul/create', [ModulController::class, 'create'])->name('modul.create');
+    Route::post('/modul/store', [ModulController::class, 'store'])->name('modul.store');
 
-//CREATE
+    //CREATE Admin
 });
 Route::get('/', [UserController::class, 'indexUser'])->name('user.home');
 
-
-
-
-//---------------------------------------------------------------
+Route::get('/tes', function () {
+    return view('layouts.appTest');
+});

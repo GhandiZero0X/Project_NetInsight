@@ -13258,7 +13258,8 @@ textarea {
 }
 .posts-entry .blog-entry h2 a,
 .posts-entry .blog-entry .h2 a {
-    color: #4d4c7d;
+    color: black;
+    text-decoration: none;
 }
 
 .posts-entry .btn-sm,
@@ -13300,7 +13301,7 @@ textarea {
 }
 
 .read-more {
-    border-bottom: 2px solid #214252;
+    border-bottom: 2px solid #0a3139;
 }
 
 .post-entry-alt h2,
@@ -13310,7 +13311,8 @@ textarea {
 }
 .post-entry-alt h2 a,
 .post-entry-alt .h2 a {
-    color: #4d4c7d;
+    color: black;
+    /* text-decoration: none; */
 }
 
 .post-entry-alt .excerpt {
@@ -13403,6 +13405,27 @@ textarea {
 }
 .custom-pagination a:hover {
     background: #214252;
+}
+
+/* CSS untuk tombol Download Modul */
+.download-button {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.btn-neon-green {
+    background-color: rgba(206, 245, 61, 0.8); /* Warna hijau neon */
+    color: #000000; /* Warna teks hitam */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-neon-green:hover {
+    color: white;
+    background-color: rgba(206, 245, 61, 0.8); /* Warna hijau neon saat hover */
 }
 
 .sidebar {
