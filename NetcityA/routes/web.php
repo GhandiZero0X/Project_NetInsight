@@ -73,7 +73,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/modul', [ModulController::class, 'index'])->name('modul.index');
     Route::get('/modul/create', [ModulController::class, 'create'])->name('modul.create');
     Route::post('/modul/store', [ModulController::class, 'store'])->name('modul.store');
-
+    Route::get('/modul/{id}',[ModulController::class,'edit'])->name('modul.edit');
+    Route::put('/modul/{id}',[ModulController::class,'update'])->name('modul.update');
+    Route::delete('/modul/{id}',[ModulController::class,'destroy'])->name('modul.destroy');
     //CREATE Admin
 });
 Route::get('/', [UserController::class, 'indexUser'])->name('user.home');
