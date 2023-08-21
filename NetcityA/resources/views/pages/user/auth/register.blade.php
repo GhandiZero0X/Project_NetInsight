@@ -11,25 +11,24 @@
                                 <div class="card-body p-md-5 mx-md-4">
                                     <div class="text-center">
                                         <div class="logo-circle">
-                                            <img src="images/LogoNetCity.jpeg" alt="logo">
+                                            <img src="images/LogoNetCity.png" alt="logo">
                                         </div>
-                                        <h4 class="mt-1 pb-1">Net<span style="color: rgba(206, 245, 61, 0.8)">Insight</span>
-                                        </h4>
-                                        <p class="small mb-5">
+                                        <h4 class="mt-4 pb-1">Net<span style="color: rgba(206, 245, 61, 0.8)">Insight</span></h4>
+                                        <p class="small mb-3" style="text-align: center;">
                                             <b>Part of <a href="https://www.instagram.com/netcitysurabaya/"
                                                     style="color: rgba(206, 245, 61, 0.8);">NetCity</a></b>
-                                        </p> <!-- Ubah ukuran dan letak tulisan Part of Net City -->
+                                        </p>
                                     </div>
 
                                     <form action="" method="POST">
                                         @csrf
-                                        <p>Please Registration to your account</p>
+                                        <p>Please registration to your account</p>
                                         @if ($errors->has('name'))
                                             <span class="text-danger">{{ $errors->first('name') }}</span>
                                         @endif
                                         <div class="form-outline mb-4">
                                             <input type="text" name="name" id="form2Example22" class="form-control"
-                                                placeholder="Name" />
+                                                placeholder="Full Name" />
                                         </div>
                                         @if ($errors->has('email'))
                                             <span class="text-danger">{{ $errors->first('email') }}</span>
@@ -61,21 +60,21 @@
                                                 class="form-control" placeholder="Password Confirmation" />
                                         </div>
 
-                                        <div class="text-center pt-1 mb-5 pb-1">
+                                        <div class="text-center pt-1 pb-1">
                                             <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
                                                 type="submit">Register</button>
-                                            {{-- <a class="text-muted" href="#!">Forgot password?</a> --}}
                                         </div>
-                                        {{-- <div class="d-flex align-items-center justify-content-center pb-4">
-                                            <a href="{{ route('login') }}"> <button type="button"
-                                                    class="btn btn-outline-danger ms-2 ">Login </button></a>
-                                        </div> --}}
                                     </form>
+                                    <hr>
+                                    <div class="text-center pt-1 mb-5 pb-1">
+                                        <a href="{{ route('login') }}" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                                            type="submit">Back</a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                                    <h4 class="mb-4">Whar is NetCity 2.0</h4>
+                                    <h4 class="mb-4">What is NetCity 2.0</h4>
                                     <p class="small mb-0">Networking With Creative Industry is a series of event consisting
                                         of internationl seminars or workshops that invite mentors form the creative
                                         industries as wll as creative exhibitions that aim to introduce the potential of the

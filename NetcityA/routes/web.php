@@ -39,11 +39,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', [UserController::class, 'indexUser'])->name('user.home');
     //Halaman Modul User
     Route::get('/Modul', function () {
-        return view('pages.user.content.modul');
+        return view('pages.user.content.modul', [
+            'title' => 'Modul'
+        ]);
     })->name('user.modul');
     //Halaman Kategori User
     Route::get('/Kategori', function () {
-        return view('pages.user.content.kategori');
+        return view('pages.user.content.kategori', [
+            'title' => 'Kategori'
+        ]);
     })->name('user.kategori');
     //Logout User
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');

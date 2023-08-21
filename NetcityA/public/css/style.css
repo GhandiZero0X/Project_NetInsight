@@ -3588,7 +3588,7 @@ fieldset:disabled .btn {
     border-color: #214252;
 }
 .btn-outline-primary:hover {
-    color: #fff;
+    color: white;
     background-color: #214252;
     border-color: #214252;
 }
@@ -4509,6 +4509,8 @@ fieldset:disabled .btn {
 .tab-content > .active {
     display: block;
 }
+
+
 
 .navbar {
     position: relative;
@@ -12153,24 +12155,11 @@ fieldset:disabled .btn {
     color: white !important;
 }
 
-/* Mengatur tampilan menu Login dan Logout */
-/* .d-flex.justify-content-end {
-    margin-top: 10px;
+.dropdown-item:hover {
+    color: white;
+    background-color: rgba(206, 245, 61, 0.8); /* Warna latar belakang hijau neon */
+    transition: background-color 0.3s, color 0.3s; /* Transisi saat hover */
 }
-
-.d-flex.justify-content-end a.btn {
-    background-color: rgba(206, 245, 61, 1);
-    color: black;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.d-flex.justify-content-end a.btn:hover {
-    background-color: rgba(206, 245, 61, 0.8);
-} */
 
 .site-nav h1,
 .site-nav .h1 {
@@ -12230,7 +12219,7 @@ fieldset:disabled .btn {
     padding: 20px 0;
     margin-top: 20px;
     margin-left: 0px;
-    background: #fff;
+    background: black;
     -webkit-transition: 0.2s 0s;
     -o-transition: 0.2s 0s;
     transition: 0.2s 0s;
@@ -12395,7 +12384,7 @@ fieldset:disabled .btn {
     content: "";
     width: 2px;
     height: 30px;
-    background: #000;
+    background: white;
 }
 .site-mobile-menu-close > span:before {
     -webkit-transform: rotate(45deg);
@@ -12414,7 +12403,7 @@ fieldset:disabled .btn {
     right: 0;
     z-index: 2000;
     padding-top: 20px;
-    background: #fff;
+    background: black;
     height: calc(100vh);
     -webkit-transform: translateX(100%);
     -ms-transform: translateX(100%);
@@ -12450,6 +12439,7 @@ fieldset:disabled .btn {
     -webkit-transition: 0.3s all ease;
     -o-transition: 0.3s all ease;
     transition: 0.3s all ease;
+    color: white;
 }
 .site-mobile-menu .site-mobile-menu-header .site-mobile-menu-logo {
     float: left;
@@ -12484,17 +12474,19 @@ fieldset:disabled .btn {
     padding: 5px 20px;
     display: block;
     position: relative;
-    color: #000;
+    color: rgba(206, 245, 61, 0.8);
+    text-decoration: none;
 }
 .site-mobile-menu .site-nav-wrap a:hover {
-    color: #214252;
+    color: white;
 }
 .site-mobile-menu .site-nav-wrap li {
     position: relative;
     display: block;
 }
 .site-mobile-menu .site-nav-wrap li.active > a {
-    color: #214252;
+    color: rgba(206, 245, 61, 0.8);
+    text-decoration: none;
 }
 .site-mobile-menu .site-nav-wrap .arrow-collapse {
     position: absolute;
@@ -12506,7 +12498,7 @@ fieldset:disabled .btn {
     text-align: center;
     cursor: pointer;
     border-radius: 50%;
-    border: 1px solid #f8f9fa;
+    border: 1px solid rgba(206, 245, 61, 0.8);
 }
 .site-mobile-menu .site-nav-wrap .arrow-collapse:before {
     font-size: 14px;
@@ -12522,6 +12514,7 @@ fieldset:disabled .btn {
     -webkit-transition: 0.3s all ease;
     -o-transition: 0.3s all ease;
     transition: 0.3s all ease;
+    color: rgba(206, 245, 61, 0.8);
 }
 .site-mobile-menu .site-nav-wrap .arrow-collapse.collapsed:before {
     -webkit-transform: translate(-50%, -50%);
@@ -12798,10 +12791,10 @@ a,
     border-color: #214252;
 }
 .btn.btn-outline-primary {
-    color: #214252;
+    color: black;
 }
 .btn.btn-outline-primary:hover {
-    color: #fff;
+    color: black;
 }
 .btn.btn-outline-white {
     border-color: #fff;

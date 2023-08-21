@@ -18,10 +18,10 @@
         <div class="container">
             <div class="row blog-entries element-animate">
                 <div class="col-md-12 col-lg-8 main-content">
-                    <div class="download-button">
-                        <a href="link-ke-file-modul.pdf" class="btn btn-neon-green">
-                            <i class="bx bxs-file-pdf"></i> Download Modul
-                        </a>
+                    <div class="row my-4">
+                        <div class="row-md-6 mb-4 d-flex justify-content-center align-items-center">
+                            <img src="images/Brushstrokes of Imagination.jpg" alt="Image placeholder" class="img-fluid rounded" style="max-width: 300px; max-height: 200px;">
+                        </div>
                     </div>
                     <div class="post-content-body">
                         <p>Selamat datang di dalam Modul "Brushstrokes of Imagination." Di sini, Anda akan diundang untuk
@@ -34,17 +34,6 @@
                         <p>Materi Modul:
                             1. Pengantar ke Dunia Seni Visual, Apa itu seni visual dan mengapa itu penting?
                             Mengapa seni memiliki kekuatan untuk menyentuh emosi dan pikiran?</p>
-                        <div class="row my-4">
-                            <div class="col-md-12 mb-4">
-                                <img src="images/hero_1.jpg" alt="Image placeholder" class="img-fluid rounded">
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <img src="images/img_2_horizontal.jpg" alt="Image placeholder" class="img-fluid rounded">
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <img src="images/img_3_horizontal.jpg" alt="Image placeholder" class="img-fluid rounded">
-                            </div>
-                        </div>
                         <p>2. Elemen Dasar Seni Rupa,
                             Goresan kuas dan aliran dalam seni lukis.
                             Memahami penggunaan warna untuk menciptakan suasana dan mood.
@@ -71,6 +60,12 @@
 
                             Selamat berkarya!</p>
                     </div>
+                    <div class="download-button">
+                            <a href="" class="btn btn-neon-green border">
+                                <i class="bx bxs-file-pdf"></i> Download Modul
+                            </a>
+                    </div>
+
                 </div>
                 <!-- END main-content -->
 

@@ -48,20 +48,20 @@
         <div class="container">
             <div class="row justify-content-center mb-4">
                 <div class="col-md-8 text-center">
-                    <h1 class="font-weight-bold" style="text-decoration: underline;">Kegiatan <span
-                            style="color: rgba(206, 245, 61, 0.8);">Event</span>
+                    <h1 class="font-weight-bold" style="text-decoration: underline;">Kegiatan<span
+                            style="color: rgba(206, 245, 61, 0.8);"> NetCity.</span>
                     </h1>
                 </div>
             </div>
 
             {{-- List kegiatan Event --}}
-            <div class="row">
+            <div class="row text-center">
                 <div class="col-md-6 col-lg-3">
                     <div class="blog-entry">
                         <a class="img-link">
                             <img src="images/img_1_horizontal.jpg" alt="Image" class="img-fluid">
                         </a>
-                        <h2><a href="{{ route('user.modul') }}">Thought you loved Python? Wait until you meet Rust</a></h2>
+                        <h2><a>Kegiatan 1</a></h2>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
@@ -69,7 +69,7 @@
                         <a class="img-link">
                             <img src="images/img_2_horizontal.jpg" alt="Image" class="img-fluid">
                         </a>
-                        <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a></h2>
+                        <h2><a>Kegiatan 2</a></h2>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
@@ -77,7 +77,7 @@
                         <a class="img-link">
                             <img src="images/img_3_horizontal.jpg" alt="Image" class="img-fluid">
                         </a>
-                        <h2><a href="{{ route('user.modul') }}">UK sees highest inflation in 30 years</a></h2>
+                        <h2><a>Kegiatan 3</a></h2>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
@@ -85,7 +85,7 @@
                         <a class="img-link">
                             <img src="images/img_4_horizontal.jpg" alt="Image" class="img-fluid">
                         </a>
-                        <h2><a href="{{ route('user.modul') }}">Don’t assume your user data in the cloud is safe</a></h2>
+                        <h2><a>Kegiatan 4</a></h2>
                     </div>
                 </div>
             </div>
@@ -94,6 +94,12 @@
     <!-- End posts-entry -->
 
     {{-- Section Kategori --}}
+
+    {{-- Buat semua isi dari kategori yanga ada di home ini
+        otomatis tertampil yang terbaru tapi ngak semua modul
+        yang terbaru saja yang di tampilkan kalau mua melihat
+        yang lain harus klik wiew all dan jika sudah ada kategori
+        tetapi belum ada modul akan memunculkan tulisan coming soon --}}
 
     {{-- 1 kategori Visual Arts and Design --}}
     <section class="section bg-light">
@@ -109,15 +115,16 @@
                 <div class="col-sm-6">
                     <h2 class="posts-entry-title">Visual Arts and Design</h2>
                 </div>
-                <div class="col-sm-6 text-sm-end"><a href="{{ route('user.kategori') }}" class="read-more">View All</a></div>
+                <div class="col-sm-6 text-sm-end"><a href="{{ route('user.kategori') }}" class="read-more">View All</a>
+                </div>
             </div>
 
             {{-- list kategori Visual Arts and Design --}}
             <div class="row">
                 <div class="col-lg-4 mb-4">
                     <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/Brushstrokes of Imagination.jpg"
-                                alt="Image" class="img-fluid"></a>
+                        <a href="{{ route('user.modul') }}" class="img-link"><img
+                                src="images/Brushstrokes of Imagination.jpg" alt="Image" class="img-fluid"></a>
                         <div class="excerpt">
                             <h2><a href="{{ route('user.modul') }}">Brushstrokes of Imagination</a></h2>
                             <p>Selamat datang di dunia imajinasi yang membentuk Modul "Brushstrokes of Imagination."
@@ -131,24 +138,8 @@
 
                 <div class="col-lg-4 mb-4">
                     <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/Digital Realms.gif" alt="Image"
-                                class="img-fluid"></a>
-                        <div class="excerpt">
-                            <h2><a href="{{ route('user.modul') }}">
-                                    Digital Realms: Creating Art in Pixels</a></h2>
-                            <p>Selamat datang di era di mana seni bertemu teknologi dalam Modul "Digital Realms: Creating
-                                Art in Pixels." Jika Anda penasaran dengan bagaimana seniman mengubah ide-ide mereka menjadi
-                                dunia digital yang hidup, maka modul ini adalah pintu masuk Anda ke dalam kreativitas tanpa
-                                batas. Ayo temukan dunia di mana kode dan kreativitas berpadu, dan jadikan layar Anda
-                                sebagai kanvas yang tak terbatas untuk menciptakan karya yang menakjubkan!</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4">
-                    <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/Dream-Lion-Morphogenesis.jpg" alt="Image"
-                                class="img-fluid"></a>
+                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/Dream-Lion-Morphogenesis.jpg"
+                                alt="Image" class="img-fluid"></a>
                         <div class="excerpt">
                             <h2><a href="{{ route('user.modul') }}">
                                     Sculpting Dreams: Exploring 3D Art</a></h2>
@@ -180,8 +171,8 @@
             <div class="row">
                 <div class="col-lg-4 mb-4">
                     <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_7_horizontal.jpg" alt="Image"
-                                class="img-fluid"></a>
+                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_7_horizontal.jpg"
+                                alt="Image" class="img-fluid"></a>
                         <div class="excerpt">
                             <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a></h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor
@@ -193,8 +184,8 @@
 
                 <div class="col-lg-4 mb-4">
                     <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_6_horizontal.jpg" alt="Image"
-                                class="img-fluid"></a>
+                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_6_horizontal.jpg"
+                                alt="Image" class="img-fluid"></a>
                         <div class="excerpt">
                             <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a></h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor
@@ -206,10 +197,11 @@
 
                 <div class="col-lg-4 mb-4">
                     <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_5_horizontal.jpg" alt="Image"
-                                class="img-fluid"></a>
+                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_5_horizontal.jpg"
+                                alt="Image" class="img-fluid"></a>
                         <div class="excerpt">
-                            <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a></h2>
+                            <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a>
+                            </h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor
                                 laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo,
                                 aliquid, dicta beatae quia porro id est.</p>
@@ -235,10 +227,11 @@
             <div class="row">
                 <div class="col-lg-4 mb-4">
                     <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_7_horizontal.jpg" alt="Image"
-                                class="img-fluid"></a>
+                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_7_horizontal.jpg"
+                                alt="Image" class="img-fluid"></a>
                         <div class="excerpt">
-                            <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a></h2>
+                            <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a>
+                            </h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor
                                 laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo,
                                 aliquid, dicta beatae quia porro id est.</p>
@@ -248,10 +241,11 @@
 
                 <div class="col-lg-4 mb-4">
                     <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_6_horizontal.jpg" alt="Image"
-                                class="img-fluid"></a>
+                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_6_horizontal.jpg"
+                                alt="Image" class="img-fluid"></a>
                         <div class="excerpt">
-                            <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a></h2>
+                            <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a>
+                            </h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor
                                 laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo,
                                 aliquid, dicta beatae quia porro id est.</p>
@@ -261,10 +255,11 @@
 
                 <div class="col-lg-4 mb-4">
                     <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_5_horizontal.jpg" alt="Image"
-                                class="img-fluid"></a>
+                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_5_horizontal.jpg"
+                                alt="Image" class="img-fluid"></a>
                         <div class="excerpt">
-                            <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a></h2>
+                            <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a>
+                            </h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor
                                 laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo,
                                 aliquid, dicta beatae quia porro id est.</p>
@@ -287,43 +282,8 @@
 
             {{-- list kategori Design Communication --}}
             <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_7_horizontal.jpg" alt="Image"
-                                class="img-fluid"></a>
-                        <div class="excerpt">
-                            <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor
-                                laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo,
-                                aliquid, dicta beatae quia porro id est.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4">
-                    <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_6_horizontal.jpg" alt="Image"
-                                class="img-fluid"></a>
-                        <div class="excerpt">
-                            <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor
-                                laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo,
-                                aliquid, dicta beatae quia porro id est.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4">
-                    <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_5_horizontal.jpg" alt="Image"
-                                class="img-fluid"></a>
-                        <div class="excerpt">
-                            <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor
-                                laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo,
-                                aliquid, dicta beatae quia porro id est.</p>
-                        </div>
-                    </div>
+                <div class="col-lg-12 bg-light">
+                    <p class="text-dark font-weight-bold text-center" style="font-size: 24px; line-height: 1.5; padding: 20px 0;">Coming Soon</p>
                 </div>
             </div>
         </div>

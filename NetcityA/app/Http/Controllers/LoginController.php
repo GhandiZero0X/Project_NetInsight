@@ -12,7 +12,9 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
     public function index(){
-        return view('pages.user.auth.login');
+        return view('pages.user.auth.login', [
+            'title' => 'Login'
+        ]);
     }
 
     public function login(Request $request){
