@@ -76,8 +76,8 @@
     </div> <!-- /.row -->
 
     <div class="row mt-5">
-        <div class="col-12 text-center">
-            <p>Copyright &copy;
+        <div class="col-12">
+            <p class="text-center">Copyright &copy;
                 <script>
                     document.write(new Date().getFullYear());
                 </script>. All Rights Reserved. &mdash; Designed with love by <span
