@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+    <meta property="og:image" itemprop="image" content="images/LogoNetCity-title.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:wight" content="200">
+    <meta property="og:image:height" content="200">
+    <link rel="icon" type="image/png" href="images/LogoNetCity-title.png">
+    <title>Net Insight | {{ $title }}</title>
+
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Untree.co">
@@ -29,8 +37,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/flatpickr.min.css">
-
-    <title>Net Insight</title>
 </head>
 
 <body>

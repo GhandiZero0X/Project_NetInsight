@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 class RegisterController extends Controller
 {
     public function index(){
-        return view('pages.user.auth.register');
+        return view('pages.user.auth.register', [
+            'title' => 'Register'
+        ]);
     }
 
     public function register(Request $request){

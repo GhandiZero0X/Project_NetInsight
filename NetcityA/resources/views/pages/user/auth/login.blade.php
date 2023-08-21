@@ -1,7 +1,7 @@
 @extends('layouts.appLogReg')
 
 @section('Login')
-    <section class="h-100 gradient-form" style=" background-color: rgb(201, 197, 197)">
+    <section class="h-100 gradient-form" style="background-color: rgb(201, 197, 197)">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-10">
@@ -11,11 +11,10 @@
                                 <div class="card-body p-md-5 mx-md-4">
                                     <div class="text-center">
                                         <div class="logo-circle">
-                                            <img src="images/LogoNetCity.jpeg" alt="logo">
+                                            <img src="images/LogoNetCity.png" alt="logo">
                                         </div>
-                                        <h4 class="mt-4 pb-1">Net<span style="color: rgba(206, 245, 61, 0.8)">Insight</span>
-                                        </h4>
-                                        <p class="small mb-3">
+                                        <h4 class="mt-4 pb-1">Net<span style="color: rgba(206, 245, 61, 0.8)">Insight</span></h4>
+                                        <p class="small mb-3" style="text-align: center;">
                                             <b>Part of <a href="https://www.instagram.com/netcitysurabaya/"
                                                     style="color: rgba(206, 245, 61, 0.8);">NetCity</a></b>
                                         </p>
@@ -69,7 +68,7 @@
                             </div>
                             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                                    <h4 class="mb-4">Whar is NetCity 2.0</h4>
+                                    <h4 class="mb-4">What is NetCity 2.0</h4>
                                     <p class="small mb-0">Networking With Creative Industry is a series of event consisting
                                         of internationl seminars or workshops that invite mentors form the creative
                                         industries as wll as creative exhibitions that aim to introduce the potential of the
