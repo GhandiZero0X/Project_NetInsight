@@ -101,19 +101,25 @@
         yang lain harus klik wiew all dan jika sudah ada kategori
         tetapi belum ada modul akan memunculkan tulisan coming soon --}}
 
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8 text-center">
+                <h1 class="font-weight-bold" style="text-decoration: underline;">
+                    Modul <span style="color: rgba(206, 245, 61, 0.8);">Modul</span>
+                </h1>
+            </div>
+        </div>
+
     {{-- 1 kategori Visual Arts and Design --}}
+
+        @foreach( $kategoris as $kategori )
     <section class="section bg-light">
         <div class="container">
-            <div class="row justify-content-center mb-4">
-                <div class="col-md-8 text-center">
-                    <h1 class="font-weight-bold" style="text-decoration: underline;">
-                        Modul <span style="color: rgba(206, 245, 61, 0.8);">Modul</span>
-                    </h1>
-                </div>
-            </div>
+
+
+
             <div class="row mb-4">
                 <div class="col-sm-6">
-                    <h2 class="posts-entry-title">Visual Arts and Design</h2>
+                    <h2 class="posts-entry-title">{{ $kategori->nama_kategori }}</h2>
                 </div>
                 <div class="col-sm-6 text-sm-end"><a href="{{ route('user.kategori') }}" class="read-more">View All</a>
                 </div>
@@ -121,171 +127,29 @@
 
             {{-- list kategori Visual Arts and Design --}}
             <div class="row">
+                @foreach ($kategori->modul as $modul )
+
+
                 <div class="col-lg-4 mb-4">
                     <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img
-                                src="images/Brushstrokes of Imagination.jpg" alt="Image" class="img-fluid"></a>
+                        <a href="{{ route('user.modul') }}" class="img-link">
+                            <img src="{{ asset('imgModul/'.$modul->gambar_modul) }}" alt="Gambar" class="img-fluid" style="width: 100%; height: auto;">
+</a>
                         <div class="excerpt">
-                            <h2><a href="{{ route('user.modul') }}">Brushstrokes of Imagination</a></h2>
-                            <p>Selamat datang di dunia imajinasi yang membentuk Modul "Brushstrokes of Imagination."
-                                Mengubah pikiran dan emosi menjadi karya seni memukau adalah tujuan kami. Di sini, kami
-                                membuka pintu pemahaman seni visual yang mendalam, membangun keterampilan Anda untuk
-                                menggambarkan dunia pribadi. Mari melepaskan kreativitas, mengikuti goresan impian, melukis
-                                dunia dengan warna tak terbayangkan sebelumnya!</p>
+                            <h2><a href="{{ route('user.modul') }}">{{ $modul->nama_modul }}</a></h2>
+                            <p>{{ $modul->isiteaser_modul }}</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 mb-4">
-                    <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/Dream-Lion-Morphogenesis.jpg"
-                                alt="Image" class="img-fluid"></a>
-                        <div class="excerpt">
-                            <h2><a href="{{ route('user.modul') }}">
-                                    Sculpting Dreams: Exploring 3D Art</a></h2>
-                            <p>Selamat datang di dunia di mana tiga dimensi membawa ide-ide menjadi hidup dalam Modul
-                                "Sculpting Dreams: Exploring 3D Art." Apakah Anda pernah membayangkan memahat objek dari
-                                angan-angan Anda menjadi bentuk fisik yang dapat Anda rasakan? Modul ini akan membimbing
-                                Anda melalui proses menciptakan seni tiga dimensi yang memukau. Mari kita bersama-sama
-                                menyelami dimensi baru dalam seni rupa, di mana karya-karya kita akan merayap keluar dari
-                                kanvas dan menjadi nyata di hadapan mata kita!</p>
-                        </div>
-                    </div>
-                </div>
+
+                @endforeach
             </div>
+
         </div>
     </section>
 
-    {{-- 2 Kategori Media and Entertainment --}}
-    <section class="section">
-        <div class="container">
+    @endforeach
 
-            <div class="row mb-4">
-                <div class="col-sm-6">
-                    <h2 class="posts-entry-title">Media and Entertainment</h2>
-                </div>
-                <div class="col-sm-6 text-sm-end"><a href="category.html" class="read-more">View All</a></div>
-            </div>
-
-            {{-- list kategori Media and Entertainment --}}
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_7_horizontal.jpg"
-                                alt="Image" class="img-fluid"></a>
-                        <div class="excerpt">
-                            <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor
-                                laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo,
-                                aliquid, dicta beatae quia porro id est.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4">
-                    <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_6_horizontal.jpg"
-                                alt="Image" class="img-fluid"></a>
-                        <div class="excerpt">
-                            <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor
-                                laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo,
-                                aliquid, dicta beatae quia porro id est.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4">
-                    <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_5_horizontal.jpg"
-                                alt="Image" class="img-fluid"></a>
-                        <div class="excerpt">
-                            <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a>
-                            </h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor
-                                laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo,
-                                aliquid, dicta beatae quia porro id est.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- 3 Kategori Design Communication --}}
-    <section class="section bg-light">
-        <div class="container">
-
-            <div class="row mb-4">
-                <div class="col-sm-6">
-                    <h2 class="posts-entry-title">Design Communication</h2>
-                </div>
-                <div class="col-sm-6 text-sm-end"><a href="category.html" class="read-more">View All</a></div>
-            </div>
-
-            {{-- list kategori Design Communication --}}
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_7_horizontal.jpg"
-                                alt="Image" class="img-fluid"></a>
-                        <div class="excerpt">
-                            <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a>
-                            </h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor
-                                laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo,
-                                aliquid, dicta beatae quia porro id est.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4">
-                    <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_6_horizontal.jpg"
-                                alt="Image" class="img-fluid"></a>
-                        <div class="excerpt">
-                            <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a>
-                            </h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor
-                                laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo,
-                                aliquid, dicta beatae quia porro id est.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4">
-                    <div class="post-entry-alt">
-                        <a href="{{ route('user.modul') }}" class="img-link"><img src="images/img_5_horizontal.jpg"
-                                alt="Image" class="img-fluid"></a>
-                        <div class="excerpt">
-                            <h2><a href="{{ route('user.modul') }}">Startup vs corporate: What job suits you best?</a>
-                            </h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor
-                                laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo,
-                                aliquid, dicta beatae quia porro id est.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- 4 Kategori Fashion and Apparel --}}
-    <section class="section">
-        <div class="container">
-            <div class="row mb-4">
-                <div class="col-sm-6">
-                    <h2 class="posts-entry-title">Fashion and Apparel</h2>
-                </div>
-                <div class="col-sm-6 text-sm-end"><a href="category.html" class="read-more">View All</a></div>
-            </div>
-
-            {{-- list kategori Design Communication --}}
-            <div class="row">
-                <div class="col-lg-12 bg-light">
-                    <p class="text-dark font-weight-bold text-center" style="font-size: 24px; line-height: 1.5; padding: 20px 0;">Coming Soon</p>
-                </div>
-            </div>
-        </div>
-    </section>
 @endsection
+

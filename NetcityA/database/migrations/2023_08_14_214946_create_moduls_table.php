@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('gambar_modul')->default('');
             $table->string('download_modul')->default('');
             $table->text('isi_modul',1000);
+            $table->text('isiteaser_modul',1000);
             $table->timestamps();
         });
     }

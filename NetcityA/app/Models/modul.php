@@ -18,6 +18,7 @@ class Modul extends Model
         'gambar_modul',
         'download_modul',
         'isi_modul',
+        'isiteaser_modul',
     ];
 
     public function kategori(){

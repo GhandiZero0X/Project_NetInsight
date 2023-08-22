@@ -7,7 +7,7 @@
     <meta property="og:image:wight" content="200">
     <meta property="og:image:height" content="200">
     <link rel="icon" type="image/png" href="images/LogoNetCity-title.png">
-    <title>Net Insight | {{ $title }}</title>
+    <title>Net Insight | Home </title>
 
 
     <meta charset="utf-8">

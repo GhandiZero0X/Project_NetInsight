@@ -90,6 +90,8 @@
                                   </select><br>
                                 <label>Isi Modul</label></br>
                                 <textarea type="text" name="isi_modul" class="form-control"></textarea></br>
+                                <label>Isi Teaser Modul</label></br>
+                                <textarea type="text" name="isiteaser_modul" class="form-control"></textarea></br>
                                 <input type="hidden" name="id_user" value="{{ old('id_user',$users->id) }}">
                                 <label>Input Gambar</label></br>
                                 <input type="file" name="gambar_modul" id="name" class="form-control"></br>

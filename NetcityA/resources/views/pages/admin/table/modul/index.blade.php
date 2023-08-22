@@ -84,7 +84,6 @@
                                         <th>Nama_Modul</th>
                                         <th> Nama_kategori </th>
                                         <th> User </th>
-                                        <th> Isi Modul </th>
                                         <th> Gambar Modul </th>
                                         <th> Download Modul </th>
                                         <th> Created at </th>
@@ -99,7 +98,6 @@
                                         <th>Nama_Modul</th>
                                         <th> Nama_kategori </th>
                                         <th> User </th>
-                                        <th> Isi Modul </th>
                                         <th> Gambar Modul </th>
                                         <th> Created at </th>
                                         <th> Update at </th>
@@ -108,27 +106,30 @@
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    @foreach($moduls as $modul)
+                                    @foreach ($moduls as $modul)
                                         <tr>
                                             <td>{{ $modul->id_modul }}</td>
-                                            <td>{{ $modul->nama_modul}}</td>
+                                            <td>{{ $modul->nama_modul }}</td>
                                             <td>{{ $modul->kategori->nama_kategori }}</td>
                                             <td>{{ $modul->user->name }} </td>
-                                            <td> <article> {{ $modul->isi_modul }}</article></td>
-                                            <td> <img src="{{ asset('imgModul/'.$modul->gambar_modul) }}" alt="" style="width:55px"> </td>
-                                            <td><a href="{{ asset('fileModul/'.$modul->download_modul) }}"><button type="button" class="btn btn-primary">Download</button></a><br> {{ $modul->download_modul }} </td>
+                                            <td> <img src="{{ asset('imgModul/' . $modul->gambar_modul) }}" alt=""
+                                                    style="width:55px"> </td>
+                                            <td><a href="{{ asset('fileModul/' . $modul->download_modul) }}"><button
+                                                        type="button" class="btn btn-primary">Download</button></a><br>
+                                                {{ $modul->download_modul }} </td>
                                             <td> {{ $modul->created_at }}</td>
                                             <td>{{ $modul->updated_at }}</td>
                                             <td>
 
-                                                <a href="{{ route('modul.edit',$modul->id_modul) }}"><button
-                                                        type="submit" class="btn btn-success"><i class="bi bi-pencil-square"></i></button></a>
-                                                <form action="{{ route('modul.destroy',$modul->id_modul) }}"
+                                                <a href="{{ route('modul.edit', $modul->id_modul) }}"><button
+                                                        type="submit" class="btn btn-success"><i
+                                                            class="bi bi-pencil-square"></i></button></a>
+                                                <form action="{{ route('modul.destroy', $modul->id_modul) }}"
                                                     method="POST" style="display: inline-block;">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" onclick="return confirm('Are you sure ?')"
-                                                    class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                                                        class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
 
 
                                                 </form>
@@ -136,7 +137,7 @@
                                             </td>
 
                                         </tr>
-                                        @endforeach
+                                    @endforeach
 
                                 </tbody>
 

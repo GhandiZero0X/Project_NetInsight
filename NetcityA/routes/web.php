@@ -87,3 +87,5 @@ Route::get('/', [UserController::class, 'indexUser'])->name('user.home');
 Route::get('/tes', function () {
     return view('layouts.appTest');
 });
+
+

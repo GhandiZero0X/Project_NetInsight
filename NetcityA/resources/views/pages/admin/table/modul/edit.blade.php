@@ -92,6 +92,8 @@
                                   </select><br>
                                   <label>Isi Modul</label></br>
                                   <textarea type="text" name="isi_modul" class="form-control" value="{{ old('isi_modul',$moduls->isi_modul) }}"> </textarea></br>
+                                  <label>Isi Teaser Modul</label></br>
+                                  <textarea type="text" name="isiteaser_modul" class="form-control"></textarea></br>
                                   <label>Input Gambar</label></br>
                                   <input type="file" name="gambar_modul" id="name" class="form-control" value="{{ old('gambar_modul',$moduls->gambar_modul) }}"></br>
                                   <label>Input Modul</label></br>
