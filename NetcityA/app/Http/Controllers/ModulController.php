@@ -42,7 +42,8 @@ class ModulController extends Controller
             'nama_modul' => 'required|max:100',
             'id_user' => 'required|exists:users,id',
             'id_kategori' => 'required|exists:kategoris,id_kategori',
-            'isi_modul' => 'required|max:1000',
+            'isi_modul' => 'required',
+            'isiteaser_modul'=>'required',
             'gambar_modul' => 'required|max:6000|mimes:jpg,jpeg,png',
             'download_modul' => 'required|mimes:doc,docx,pdf,xls,xlxs,ppt,pptx',
         ]);
@@ -94,7 +95,8 @@ class ModulController extends Controller
         $validateddata = $request->validate([
         'nama_modul' => 'required|max:100',
         'id_kategori' => 'required|exists:kategoris,id_kategori',
-        'isi_modul' => 'required|max:1000',
+        'isi_modul' => 'required',
+        'isiteaser_modul'=>'required',
         'gambar_modul' => 'required|max:6000|mimes:jpg,jpeg,png',
         'download_modul' => 'required|mimes:doc,docx,pdf,xls,xlxs,ppt,pptx',
         ]);
@@ -132,12 +134,22 @@ class ModulController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy($id)
-    {
-        $modul= Modul::findOrFail($id);
-        $modul->kategori()->dissociate();
+{
+    $modul = Modul::findOrFail($id);
 
-        $modul->save();
-        $modul->delete();
-        return redirect()->route('modul.index')->with('succes','Berhasil !');
-    }
+    // Dissociate the relationship
+    $modul->kategori()->dissociate();
+
+    // Save the changes to the database
+    $modul->save();
+
+    // Delete the modul
+    $modul->delete();
+
+    return redirect()->route('modul.index')->with('success', 'Berhasil !');
+}
+
+
+
+
 }
