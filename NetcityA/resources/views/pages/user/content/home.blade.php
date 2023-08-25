@@ -127,6 +127,7 @@
 
             {{-- list kategori Visual Arts and Design --}}
             <div class="row">
+                @if(count($kategori->modul)>0)
                 @foreach ($kategori->modul as $modul )
 
 
@@ -144,6 +145,11 @@
 
 
                 @endforeach
+                @else
+                <div class="col-lg-12 bg-light">
+                    <p class="text-dark font-weight-bold text-center" style="font-size: 24px; line-height: 1.5; padding: 20px 0;">Coming Soon</p>
+                </div>
+                @endif
             </div>
 
         </div>

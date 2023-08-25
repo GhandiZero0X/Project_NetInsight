@@ -24,20 +24,17 @@
                             <li class="active"><a href="{{ route('user.home') }}">Home</a></li>
                             <li class="has-children">
                                 <a href="">Kategori Modul</a>
+                               
                                 <ul class="dropdown">
+                                    @foreach($kategoris as $kategori)
                                     {{-- buat agar list dropdown
                                         yang ini jadi otomatis bertambah
                                         jika memasukkan kategori baru --}}
-                                    <li><a href="{{ route('user.kategori') }}" style="text-decoration: none">Visual Arts
-                                            and Design</a></li>
-                                    <li><a href="{{ route('user.kategori') }}" style="text-decoration: none">Media and
-                                            Entertainment</a></li>
-                                    <li><a href="{{ route('user.kategori') }}" style="text-decoration: none">Design
-                                            Communication</a></li>
-                                    <li><a href="{{ route('user.kategori') }}" style="text-decoration: none">Fashion and
-                                            Apparel</a></li>
+                                    <li><a href="{{ route('user.kategori') }}" style="text-decoration: none">{{ $kategori->nama_kategori }}</a></li>
+                                    @endforeach
                             </li>
                         </ul>
+
                         @guest
                             @if (Route::has('login'))
                                 <li><a href={{ route('login') }}>Login</a></li>

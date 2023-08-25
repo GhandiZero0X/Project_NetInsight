@@ -12,4 +12,9 @@ class HomeController extends Controller
         return view('pages.user.content.home',compact('kategoris'));
 
     }
+
+    public function kategorinavbar(){
+        $kategoris = Kategori::all();
+        return view('partials.user.navbar',compact('kategoris'));
+    }
 }
