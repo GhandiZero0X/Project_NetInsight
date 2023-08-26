@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ModulController;
@@ -38,17 +39,11 @@ Route::middleware(['auth'])->group(function () {
     // Halaman Home User
     Route::get('/', [UserController::class, 'indexUser'])->name('user.home');
     //Halaman Modul User
-    Route::get('/Modul', function () {
-        return view('pages.user.content.modul', [
-            'title' => 'Modul'
-        ]);
-    })->name('user.modul');
+    Route::get('/usermodul/{id}',[UserController::class,'modul'])->name('user.modul');
     //Halaman Kategori User
-    Route::get('/Kategori', function () {
-        return view('pages.user.content.kategori', [
-            'title' => 'Kategori'
-        ]);
-    })->name('user.kategori');
+    Route::get('/userkategori/{id}',[UserController::class,'kategori'])->name('user.kategori');
+    // Navbar Kategiri
+    Route::get('/kategorinav',[UserController::class,'kategorinavbarindex'])->name('user.navbar');
     //Logout User
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 

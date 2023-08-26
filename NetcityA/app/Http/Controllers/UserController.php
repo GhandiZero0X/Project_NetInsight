@@ -14,11 +14,34 @@ class UserController extends Controller
             // Ambil 3 modul pertama untuk setiap kategori
             $kategori->modul = $kategori->modul->take(3);
         }
-        return view('pages.user.content.home',compact('kategoris'));
+        $categoris= Kategori::with('modul')->get();
+        return view('pages.user.content.home',compact('kategoris','categoris'));
     }
 
     public function indexAdmin(){
         return view('pages.admin.content.home');
+    }
+
+
+
+
+    public function kategori($id){
+        if(Kategori::where('id_kategori',$id)->exists()){
+        $kategoris = Kategori::with('modul')->findorFail($id);
+        $categoris= Kategori::with('modul')->get();
+        $categorys = Kategori::with('modul')->get();
+        return view('pages.user.content.kategori',compact('kategoris','categorys','categoris'));
+        }
+        else{
+            return redirect()->back()->with('error', 'Kategori Tidak di Temukan');
+        }
+    }
+
+    public function modul ($id){
+        $moduls = Modul::with('kategori')->findOrFail($id)->get();
+        $categorys=Kategori::with('modul')->get();
+        $categoris=Kategori::with('modul')->get();
+        return view('pages.user.content.modul',compact('categorys','moduls','categoris'));
     }
 
 

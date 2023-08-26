@@ -17,4 +17,11 @@ class HomeController extends Controller
         $kategoris = Kategori::all();
         return view('partials.user.navbar',compact('kategoris'));
     }
+
+    public function kategori($id){
+        $kategoris = Kategori::with('modul')->findorFail($id)->get();
+        return view('pages.user.content.kategori',compact('kategoris'));
+    }
+
+   
 }

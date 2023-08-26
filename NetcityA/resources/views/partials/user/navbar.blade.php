@@ -14,7 +14,7 @@
                 <div class="row g-0 align-items-center">
                     <div class="col-2">
                         <a href="{{ route('user.home') }}" class="logo m-0 float-start d-flex align-items-center">
-                            <img src="images/LogoNetCity.png" alt="Logo" style="max-width: 40px; height: auto; border-radius: 50%; margin-right: 10px; text-decoration: none;">
+                            <img src="{{ asset('images/LogoNetCity.png') }}" alt="Logo" style="max-width: 40px; height: auto; border-radius: 50%; margin-right: 10px; text-decoration: none;">
                             NetInsight<span class="text-primary">.</span>
                         </a>
                     </div>
@@ -24,13 +24,13 @@
                             <li class="active"><a href="{{ route('user.home') }}">Home</a></li>
                             <li class="has-children">
                                 <a href="">Kategori Modul</a>
-                               
+
                                 <ul class="dropdown">
-                                    @foreach($kategoris as $kategori)
+                                    @foreach($categoris as $categori)
                                     {{-- buat agar list dropdown
                                         yang ini jadi otomatis bertambah
                                         jika memasukkan kategori baru --}}
-                                    <li><a href="{{ route('user.kategori') }}" style="text-decoration: none">{{ $kategori->nama_kategori }}</a></li>
+                                        <li><a href="{{ route('user.kategori',$categori->id_kategori )}}" style="text-decoration: none">{{ $categori->nama_kategori}}</a></li>
                                     @endforeach
                             </li>
                         </ul>
