@@ -38,7 +38,7 @@ class UserController extends Controller
     }
 
     public function modul ($id){
-        $moduls = Modul::with('kategori')->findOrFail($id)->get();
+        $moduls = Modul::where('id_modul',$id)->first();
         $categorys=Kategori::with('modul')->get();
         $categoris=Kategori::with('modul')->get();
         return view('pages.user.content.modul',compact('categorys','moduls','categoris'));
