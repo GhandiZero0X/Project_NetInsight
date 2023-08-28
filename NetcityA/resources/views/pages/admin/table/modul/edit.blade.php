@@ -81,7 +81,7 @@
                                 <label>Name Modul</label></br>
 
                                 <input type="text" name="nama_modul" id="name" class="form-control"
-                                   value="{{ old('nama_modul',$moduls->nama_modul) }}" > </br>
+                                   value="{{ old('nama_modul',$moduls->nama_modul) }}" ></br>
 
                                 <label>Name Kategori</label></br>
                                 <select class="form-select" name="id_kategori" aria-label="Default select example">
@@ -91,11 +91,11 @@
                                     @endforeach
                                   </select><br>
                                   <label>Isi Modul</label></br>
-                                  <textarea type="text" name="isi_modul" class="form-control" value="{{ old('isi_modul',$moduls->isi_modul) }}"> </textarea></br>
+                                  <textarea type="text" name="isi_modul" class="form-control" value="{{ old('isi_modul',$moduls->isi_modul) }}" > {{ $moduls->isi_modul }}</textarea></br>
                                   <label>Isi Teaser Modul</label></br>
-                                  <textarea type="text" name="isiteaser_modul" class="form-control"></textarea></br>
+                                  <textarea type="text" name="isiteaser_modul" class="form-control">{{ old('isi_modul',$moduls->isiteaser_modul) }}</textarea></br>
                                   <label>Input Gambar</label></br>
-                                  <input type="file" name="gambar_modul" id="name" class="form-control" value="{{ old('gambar_modul',$moduls->gambar_modul) }}"></br>
+                                  <input type="file" name="gambar_modul" id="name" class="form-control" value="{{ old('gambar_modul/'.$moduls->gambar_modul) }}"></br>
                                   <label>Input Modul</label></br>
                                   <input type="file" name="download_modul" class="form-control" value="{{ old('download_modul',$moduls->download_modul) }}"> </br>
                                   <input type="submit" value="Save" class="btn btn-success"></br>

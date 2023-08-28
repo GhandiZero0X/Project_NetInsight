@@ -103,7 +103,7 @@ class ModulController extends Controller
         $modul = Modul::findOrFail($id);
 
         if($request->hasFile('gambar_modul')){
-            Storage::delete('public/' . $modul->gambar_modul);
+            // Storage::delete('public/' . $modul->gambar_modul);
 
 
             $gambar= $request->file('gambar_modul')->getClientOriginalName();
@@ -115,13 +115,22 @@ class ModulController extends Controller
 
 
         if($request->hasFile('download_modul')){
-            Storage::delete('public/' . $modul->download_modul);
+            // Storage::delete('public/' . $modul->download_modul);
 
             $file= $request->file('download_modul')->getClientOriginalName();
             $request->file('download_modul')->move(public_path('fileModul'), $file);
 
 
           $validateddata['download_modul']=$file;
+        }
+
+        $modulFoto = $modul->gambar_modul;
+        $modulFile = $modul->download_modul;
+        if($modulFoto != null || $modulFoto!=''){
+            Storage::delete($modulFoto);
+        }
+        if($modulFile != null || $modulFile!=''){
+            Storage::delete($modulFile);
         }
         $modul->update($validateddata);
         $modul->kategori()->associate($request->input('id_kategori'));
