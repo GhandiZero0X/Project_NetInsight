@@ -101,61 +101,56 @@
         yang lain harus klik wiew all dan jika sudah ada kategori
         tetapi belum ada modul akan memunculkan tulisan coming soon --}}
 
-        <div class="row justify-content-center mb-4">
-            <div class="col-md-8 text-center">
-                <h1 class="font-weight-bold" style="text-decoration: underline;">
-                    Modul <span style="color: rgba(206, 245, 61, 0.8);">Modul</span>
-                </h1>
-            </div>
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-8 text-center">
+            <h1 class="font-weight-bold" style="text-decoration: underline;">
+                Modul <span style="color: rgba(206, 245, 61, 0.8);">Modul</span>
+            </h1>
         </div>
+    </div>
 
     {{-- 1 kategori Visual Arts and Design --}}
 
-        @foreach( $kategoris as $kategori )
-    <section class="section bg-light">
-        <div class="container">
-
-
-
-            <div class="row mb-4">
-                <div class="col-sm-6">
-                    <h2 class="posts-entry-title">{{ $kategori->nama_kategori }}</h2>
-                </div>
-                <div class="col-sm-6 text-sm-end"><a href="{{ route('user.kategori',$kategori->id_kategori) }}" class="read-more">View All</a>
-                </div>
-            </div>
-
-            {{-- list kategori Visual Arts and Design --}}
-            <div class="row">
-                @if(count($kategori->modul)>0)
-                @foreach ($kategori->modul as $modul )
-
-
-                <div class="col-lg-4 mb-4">
-                    <div class="post-entry-alt">
-                        <a href="{{ route('user.modul',$modul->id_modul) }}" class="img-link">
-                            <img src="{{ asset('imgModul/'.$modul->gambar_modul) }}" alt="Gambar" class="img-fluid" style="width: 100%; height: auto;">
-</a>
-                        <div class="excerpt">
-                            <h2><a href="{{ route('user.modul',$modul->id_modul) }}">{{ $modul->nama_modul }}</a></h2>
-                            <p>{{ $modul->isiteaser_modul }}</p>
-                        </div>
+    @foreach ($kategoris as $kategori)
+        <section class="section bg-light">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-sm-6">
+                        <h2 class="posts-entry-title">{{ $kategori->nama_kategori }}</h2>
+                    </div>
+                    <div class="col-sm-6 text-sm-end"><a href="{{ route('user.kategori', $kategori->id_kategori) }}"
+                            class="read-more">View All</a>
                     </div>
                 </div>
 
-
-                @endforeach
-                @else
-                <div class="col-lg-12 bg-light">
-                    <p class="text-dark font-weight-bold text-center" style="font-size: 24px; line-height: 1.5; padding: 20px 0;">Coming Soon</p>
+                {{-- list kategori Visual Arts and Design --}}
+                <div class="row">
+                    @if (count($kategori->modul) > 0)
+                        @foreach ($kategori->modul as $modul)
+                            <div class="col-lg-4 mb-4">
+                                <div class="post-entry-alt">
+                                    <a href="{{ route('user.modul', $modul->id_modul) }}" class="img-link">
+                                        <img src="{{ asset('imgModul/' . $modul->gambar_modul) }}" alt="Gambar"
+                                            class="img-fluid" style="width: 100%; height: auto;">
+                                    </a>
+                                    <div class="excerpt">
+                                        <h2><a
+                                                href="{{ route('user.modul', $modul->id_modul) }}">{{ $modul->nama_modul }}</a>
+                                        </h2>
+                                        <p>{{ $modul->isiteaser_modul }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <div class="col-lg-12 bg-light">
+                            <p class="text-dark font-weight-bold text-center"
+                                style="font-size: 24px; line-height: 1.5; padding: 20px 0;">Coming Soon</p>
+                        </div>
+                    @endif
                 </div>
-                @endif
+
             </div>
-
-        </div>
-    </section>
-
+        </section>
     @endforeach
-
 @endsection
-

@@ -38,6 +38,7 @@
                         @guest
                             @if (Route::has('login'))
                                 <li><a href={{ route('login') }}>Login</a></li>
+                                <li><a href={{ route('register') }}>Register</a></li>
                             @endif
                         @else
                             <li><a href="{{ route('logout') }}"
