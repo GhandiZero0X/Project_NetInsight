@@ -13,7 +13,8 @@
                                         <div class="logo-circle">
                                             <img src="images/LogoNetCity.png" alt="logo">
                                         </div>
-                                        <h4 class="mt-4 pb-1">Net<span style="color: rgba(206, 245, 61, 0.8)">Insight</span></h4>
+                                        <h4 class="mt-4 pb-1">Net<span style="color: rgba(206, 245, 61, 0.8)">Insight</span>
+                                        </h4>
                                         <p class="small mb-3" style="text-align: center;">
                                             <b>Part of <a href="https://www.instagram.com/netcitysurabaya/"
                                                     style="color: rgba(206, 245, 61, 0.8);">NetCity</a></b>
@@ -26,14 +27,33 @@
 
                                         @if (session('success') == 'Registrasi berhasil!')
                                             <div class="alert alert-success"> Registrasi Berhasil!</div>
+                                            <script>
+                                                // Menampilkan pesan selama 5 detik
+                                                document.addEventListener('DOMContentLoaded', function () {
+                                                    var successMessage = document.getElementById('successMessage');
+
+                                                    if (successMessage) {
+                                                        successMessage.style.display = 'block'; // Menampilkan pesan
+                                                        setTimeout(function () {
+                                                            successMessage.style.display = 'none'; // Menghilangkan pesan setelah 5 detik
+                                                        }, 10000); // 5000 milidetik = 5 detik
+                                                    }
+                                                });
+                                            </script>
                                         @endif
 
                                         @if ($errors->any())
-                                            <ul>
-                                                @foreach ($errors->all() as $items)
-                                                    <li>{{ $items }}</li>
-                                                @endforeach
-                                            </ul>
+                                            @foreach ($errors->all() as $items)
+                                                <div class="alert alert-danger">{{ $items }}</div>
+                                            @endforeach
+                                            <script>
+                                                setTimeout(function() {
+                                                    var errorMessages = document.querySelectorAll('.alert.alert-danger');
+                                                    errorMessages.forEach(function(message) {
+                                                        message.style.display = 'none';
+                                                    });
+                                                }, 10000); // 5000 milidetik atau 5 detik
+                                            </script>
                                         @endif
 
                                         <div class="form-outline mb-4">

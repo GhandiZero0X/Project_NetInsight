@@ -108,9 +108,8 @@
             </h1>
         </div>
     </div>
-    @if ($kategoris == null)
+    {{-- @if (count($kategoris->id_kategori) > 0) --}}
         {{-- 1 kategori Visual Arts and Design --}}
-
         @foreach ($kategoris as $kategori)
             <section class="section bg-light">
                 <div class="container">
@@ -152,12 +151,12 @@
                 </div>
             </section>
         @endforeach
-    @else
+    {{-- @else
         <div class="row">
             <div class="col-lg-12">
                 <p class="text-dark font-weight-bold text-center"
                     style="font-size: 24px; line-height: 1.5; padding: 20px 0;">Coming Soon</p>
             </div>
         </div>
-    @endif
+    @endif --}}
 @endsection

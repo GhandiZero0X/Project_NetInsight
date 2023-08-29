@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="site-cover site-cover-sm same-height overlay single-page"
-        style="background-image: url('images/Brushstrokes of Imagination.jpg');">
+        style="background-image: url({{ asset('imgModul/'.$moduls->gambar_modul) }});">
         <div class="container">
             <div class="row same-height justify-content-center">
                 <div class="col-md-6">

@@ -146,9 +146,6 @@ class ModulController extends Controller
 {
     $modul = Modul::findOrFail($id);
 
-    // Dissociate the relationship
-    $modul->kategori()->dissociate();
-
     // Save the changes to the database
     $modul->save();
 
