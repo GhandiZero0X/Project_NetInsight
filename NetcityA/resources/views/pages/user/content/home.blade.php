@@ -17,23 +17,23 @@
             <div class="row align-items-stretch retro-layout">
                 <div class="col-md-4">
                     <a class="h-entry mb-30 v-height gradient">
-                        <div class="featured-img" style="background-image: url('images/img_2_horizontal.jpg');"></div>
+                        <div class="featured-img" style="background-image: url('images/kiri atas.jpg');"></div>
                     </a>
                     <a class="h-entry v-height gradient">
-                        <div class="featured-img" style="background-image: url('images/img_5_horizontal.jpg');"></div>
+                        <div class="featured-img" style="background-image: url('images/kiri bawah.jpg');"></div>
                     </a>
                 </div>
                 <div class="col-md-4">
                     <a class="h-entry img-5 h-100 gradient">
-                        <div class="featured-img" style="background-image: url('images/img_1_vertical.jpg');"></div>
+                        <div class="featured-img" style="background-image: url('images/tengah potrait.jpg');"></div>
                     </a>
                 </div>
                 <div class="col-md-4">
                     <a class="h-entry mb-30 v-height gradient">
-                        <div class="featured-img" style="background-image: url('images/img_3_horizontal.jpg');"></div>
+                        <div class="featured-img" style="background-image: url('images/kanan atas.jpg');"></div>
                     </a>
                     <a class="h-entry v-height gradient">
-                        <div class="featured-img" style="background-image: url('images/img_4_horizontal.jpg');"></div>
+                        <div class="featured-img" style="background-image: url('images/kanan bawah.jpg');"></div>
                     </a>
                 </div>
             </div>
@@ -53,13 +53,12 @@
                     </h1>
                 </div>
             </div>
-
             {{-- List kegiatan Event --}}
             <div class="row text-center">
                 <div class="col-md-6 col-lg-3">
                     <div class="blog-entry">
                         <a class="img-link">
-                            <img src="images/img_1_horizontal.jpg" alt="Image" class="img-fluid">
+                            <img src="images/" alt="Image" class="img-fluid">
                         </a>
                         <h2><a>Kegiatan 1</a></h2>
                     </div>
@@ -67,7 +66,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="blog-entry">
                         <a class="img-link">
-                            <img src="images/img_2_horizontal.jpg" alt="Image" class="img-fluid">
+                            <img src="images/" alt="Image" class="img-fluid">
                         </a>
                         <h2><a>Kegiatan 2</a></h2>
                     </div>
@@ -75,7 +74,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="blog-entry">
                         <a class="img-link">
-                            <img src="images/img_3_horizontal.jpg" alt="Image" class="img-fluid">
+                            <img src="images/" alt="Image" class="img-fluid">
                         </a>
                         <h2><a>Kegiatan 3</a></h2>
                     </div>
@@ -83,7 +82,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="blog-entry">
                         <a class="img-link">
-                            <img src="images/img_4_horizontal.jpg" alt="Image" class="img-fluid">
+                            <img src="images/" alt="Image" class="img-fluid">
                         </a>
                         <h2><a>Kegiatan 4</a></h2>
                     </div>
@@ -94,13 +93,6 @@
     <!-- End posts-entry -->
 
     {{-- Section Kategori --}}
-
-    {{-- Buat semua isi dari kategori yanga ada di home ini
-        otomatis tertampil yang terbaru tapi ngak semua modul
-        yang terbaru saja yang di tampilkan kalau mua melihat
-        yang lain harus klik wiew all dan jika sudah ada kategori
-        tetapi belum ada modul akan memunculkan tulisan coming soon --}}
-
     <div class="row justify-content-center mb-4">
         <div class="col-md-8 text-center">
             <h1 class="font-weight-bold" style="text-decoration: underline;">
@@ -108,8 +100,6 @@
             </h1>
         </div>
     </div>
-    {{-- @if (count($kategoris->id_kategori) > 0) --}}
-        {{-- 1 kategori Visual Arts and Design --}}
         @foreach ($kategoris as $kategori)
             <section class="section bg-light">
                 <div class="container">
@@ -151,12 +141,4 @@
                 </div>
             </section>
         @endforeach
-    {{-- @else
-        <div class="row">
-            <div class="col-lg-12">
-                <p class="text-dark font-weight-bold text-center"
-                    style="font-size: 24px; line-height: 1.5; padding: 20px 0;">Coming Soon</p>
-            </div>
-        </div>
-    @endif --}}
 @endsection
