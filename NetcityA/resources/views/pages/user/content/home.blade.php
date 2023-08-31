@@ -41,57 +41,6 @@
     </section>
     <!-- End retroy layout blog posts -->
 
-
-    <!-- Start posts-entry -->
-    {{-- Section Penjelasan Singkat --}}
-    <section class="section posts-entry posts-entry-sm">
-        <div class="container">
-            <div class="row justify-content-center mb-4">
-                <div class="col-md-8 text-center">
-                    <h1 class="font-weight-bold" style="text-decoration: underline;">Kegiatan<span
-                            style="color: rgba(206, 245, 61, 0.8);"> NetCity.</span>
-                    </h1>
-                </div>
-            </div>
-            {{-- List kegiatan Event --}}
-            <div class="row text-center">
-                <div class="col-md-6 col-lg-3">
-                    <div class="blog-entry">
-                        <a class="img-link">
-                            <img src="images/" alt="Image" class="img-fluid">
-                        </a>
-                        <h2><a>Kegiatan 1</a></h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="blog-entry">
-                        <a class="img-link">
-                            <img src="images/" alt="Image" class="img-fluid">
-                        </a>
-                        <h2><a>Kegiatan 2</a></h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="blog-entry">
-                        <a class="img-link">
-                            <img src="images/" alt="Image" class="img-fluid">
-                        </a>
-                        <h2><a>Kegiatan 3</a></h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="blog-entry">
-                        <a class="img-link">
-                            <img src="images/" alt="Image" class="img-fluid">
-                        </a>
-                        <h2><a>Kegiatan 4</a></h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End posts-entry -->
-
     {{-- Section Kategori --}}
     <div class="row justify-content-center mb-4">
         <div class="col-md-8 text-center">
