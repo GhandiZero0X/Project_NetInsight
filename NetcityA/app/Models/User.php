@@ -51,4 +51,8 @@ class User extends Authenticatable
     public function modul(){
         return $this->hasMany(Modul::class,'id_user');
     }
+
+    public function pembayarans(){
+        return $this->hasMany(Pembayaran::class);
+    }
 }

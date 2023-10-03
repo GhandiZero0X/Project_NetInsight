@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ModulController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PembayaranController;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\Facades\Route;
 
@@ -47,6 +48,16 @@ Route::middleware(['auth'])->group(function () {
     //Logout User
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+    //ticketing
+    Route::get('/ticketing',[PembayaranController::class,'create'])->name('user.ticketing');
+    Route::get('/ticketing/{pembayaran:id}',[PembayaranController::class,'show'])->name('user.pembayaran');
+
+    Route::resource('pembayarans', PembayaranController::class)
+        ->only(['store', 'index', 'update']);
+
+    Route::get('/pembayaranadmin', [PembayaranController::class, 'indexadmin'])->name('pembayaran.indexadmin');
+    Route::get('/pembayaranadmin/{pembayaran}', [PembayaranController::class, 'edit'])->name('pembayaran.editadmin');
+    // Route::post('/pembayaranadmin', [PembayaranController::class, 'update'])->name('pembayarans.update');
 
 
     // ===================================

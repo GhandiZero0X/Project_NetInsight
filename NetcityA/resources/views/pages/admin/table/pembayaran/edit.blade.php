@@ -52,18 +52,14 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4"> Kategori Tables</h1>
-
-                    @if (session('succes'))
-                        <div class="alert alert-success"> Berhasil ! </div>
-                    @endif
+                    <h1 class="mt-4"> Pembayaran Tables</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Dashboard</a></li>
                         <li class="breadcrumb-item active">Tables</li>
                     </ol>
                     <div class="card mb-4">
                         <div class="card-body">
-                            Input, Update , Delete Kategori Tables "jangan sembarangan delete"
+                            Detail Pembayaran
 
                             .
                         </div>
@@ -71,65 +67,41 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Kategori Table
+                            Pembayaran Table
                         </div>
-
-                        <div class="card-body">
-                            <a href="{{ route('kategori.create') }}"> <button type="button"
-                                    class="btn btn-primary">Create</button><br></a>
-
-                            <table id="datatablesSimple">
-
-
-                                <thead>
-
-                                    <tr>
-                                        <th>id</th>
-                                        <th>Nama_Kategori</th>
-                                        <th> Created at </th>
-                                        <th> Update at </th>
-                                        <th>Actions</th>
-
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>id</th>
-                                        <th>Nama_Kategori</th>
-                                        <th> Created at </th>
-                                        <th> Update at </th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                    @foreach ($kategoris as $kategori)
-                                        <tr>
-                                            <td>{{ $kategori->id_kategori }}</td>
-                                            <td>{{ $kategori->nama_kategori }}</td>
-                                            <td> {{ $kategori->created_at }}</td>
-                                            <td>{{ $kategori->updated_at }}</td>
-                                            <td>
-
-                                                <a href="{{ route('kategori.edit', $kategori->id_kategori) }}"><button
-                                                        type="submit" class="btn btn-success"><i class="bi bi-pencil-square"></i></button></a>
-                                                <form action="{{ route('kategori.destroy', $kategori->id_kategori) }}"
-                                                    method="POST" style="display: inline-block;">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" onclick="return confirm('Are you sure ?')"
-                                                    class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-
-
-                                                </form>
-
-                                            </td>
-
-                                        </tr>
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
                                     @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <div class="card-body">
+                                <p>ID : {{ $pembayaran->id }}</p>
+                                <p>Nama : {{ $pembayaran->nama }}</p><br>
+                                <p>Alamat : {{ $pembayaran->alamat }}</p><br>
+                                <p>Email : {{ $pembayaran->email }}</p><br>
+                                <p>No Telp : {{ $pembayaran->no_telp }}</p><br>
+                                @if ($pembayaran->status)
+                                <p>Status : Selesai</p><br>
+                                @else
+                                <p>Status : Sedang diproses</p><br>
+                                @endif
+                                <img src="{{ asset("buktipembayaran/".$pembayaran->bukti_pemb) }}" alt="" class="mw-100">
+                                <br>
+                            <form action="{{ route('pembayarans.update', $pembayaran) }}" method="POST">
+                                @csrf
+                                @method('put')
 
-                                </tbody>
+                                <input type="hidden" name="status" value="true">
 
-                            </table>
+                                @if (!$pembayaran->status)
+                                <button class="btn btn-success mt-3">Acc</button>
+                                @endif
+
+                            </form>
                         </div>
                     </div>
                 </div>

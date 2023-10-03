@@ -29,6 +29,10 @@
                                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                     Modul
                                 </a>
+                                <a class="nav-link" href="{{ route('pembayaran.indexadmin') }}">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    Pembayaran
+                                </a>
                             </nav>
                         </div>
 
@@ -84,7 +88,7 @@
                                 <input type="text" name="nama_kategori" id="name" class="form-control"
                                     value="{{ old('nama_kategori', $kategoris->nama_kategori) }}"> </br>
 
-                                
+
                                 <input type="submit" value="Save" class="btn btn-success"></br>
 
                             </form>

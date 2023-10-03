@@ -52,7 +52,7 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4"> Modul Tables</h1>
+                    <h1 class="mt-4"> Pembayaran Tables</h1>
 
                     @if (session('succes'))
                         <div class="alert alert-success"> Berhasil ! </div>
@@ -63,7 +63,7 @@
                     </ol>
                     <div class="card mb-4">
                         <div class="card-body">
-                            Input, Update , Delete Modul Tables "jangan sembarangan delete"
+                            List Semua Pembayaran
 
                             .
                         </div>
@@ -71,12 +71,10 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Modul Table
+                            Pembayaran Table
                         </div>
 
                         <div class="card-body">
-                            <a href="{{ route('modul.create') }}"> <button type="button"
-                                    class="btn btn-primary">Create</button><br></a>
 
                             <table id="datatablesSimple">
 
@@ -85,11 +83,10 @@
 
                                     <tr>
                                         <th>id</th>
-                                        <th>Nama_Modul</th>
-                                        <th> Nama_kategori </th>
-                                        <th> User </th>
-                                        <th> Gambar Modul </th>
-                                        <th> Download Modul </th>
+                                        <th>Nama</th>
+                                        <th> Email </th>
+                                        <th> Alamat </th>
+                                        <th> No Telp </th>
                                         <th> Created at </th>
                                         <th> Update at </th>
                                         <th>Actions</th>
@@ -99,44 +96,30 @@
                                 <tfoot>
                                     <tr>
                                         <th>id</th>
-                                        <th>Nama_Modul</th>
-                                        <th> Nama_kategori </th>
-                                        <th> User </th>
-                                        <th> Gambar Modul </th>
+                                        <th>Nama</th>
+                                        <th> Email </th>
+                                        <th> Alamat </th>
+                                        <th> No Telp </th>
                                         <th> Created at </th>
                                         <th> Update at </th>
-                                        <th> Download Modul </th>
                                         <th>Actions</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    @foreach ($moduls as $modul)
+                                    @foreach ($pembayarans as $pembayaran)
                                         <tr>
-                                            <td>{{ $modul->id_modul }}</td>
-                                            <td>{{ $modul->nama_modul }}</td>
-                                            <td>{{ $modul->kategori->nama_kategori }}</td>
-                                            <td>{{ $modul->user->name }} </td>
-                                            <td> <img src="{{ asset('imgModul/' . $modul->gambar_modul) }}" alt=""
-                                                    style="width:55px"> </td>
-                                            <td><a href="{{ asset('fileModul/' . $modul->download_modul) }}"><button
-                                                        type="button" class="btn btn-primary">Download</button></a><br>
-                                                {{ $modul->download_modul }} </td>
-                                            <td> {{ $modul->created_at }}</td>
-                                            <td>{{ $modul->updated_at }}</td>
+                                            <td>{{ $pembayaran->id }}</td>
+                                            <td>{{ $pembayaran->nama }}</td>
+                                            <td>{{ $pembayaran->email }}</td>
+                                            <td>{{ $pembayaran->alamat }} </td>
+                                            <td>{{ $pembayaran->no_telp }} </td>
+                                            <td> {{ $pembayaran->created_at }}</td>
+                                            <td>{{ $pembayaran->updated_at }}</td>
                                             <td>
 
-                                                <a href="{{ route('modul.edit', $modul->id_modul) }}"><button
+                                                <a href="{{ route('pembayaran.editadmin', $pembayaran->id) }}"><button
                                                         type="submit" class="btn btn-success"><i
                                                             class="bi bi-pencil-square"></i></button></a>
-                                                <form action="{{ route('modul.destroy', $modul->id_modul) }}"
-                                                    method="POST" style="display: inline-block;">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" onclick="return confirm('Are you sure ?')"
-                                                        class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-
-
-                                                </form>
 
                                             </td>
 

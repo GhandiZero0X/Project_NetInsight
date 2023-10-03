@@ -29,6 +29,10 @@
                                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                     Modul
                                 </a>
+                                <a class="nav-link" href="{{ route('pembayaran.indexadmin') }}">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    Pembayaran
+                                </a>
                             </nav>
                         </div>
 

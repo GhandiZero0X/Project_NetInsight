@@ -22,6 +22,7 @@
                     <div class="col-8 text-right">
                         <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
                             <li class="active"><a href="{{ route('user.home') }}">Home</a></li>
+                            <li class="active"><a href="{{ route('user.ticketing') }}">Pesan Tiket</a></li>
                             <li class="has-children">
                                 <a href="">Kategori Modul</a>
 
@@ -41,14 +42,19 @@
                                 <li><a href={{ route('register') }}>Register</a></li>
                             @endif
                         @else
-                            <li><a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a></li>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
+                            <li class="has-children"><a href="">Profile</a>
+                                <ul class="dropdown">
+                                    <li><a href="{{ route("pembayarans.index") }}" style="text-decoration: none">Pembayaran</a></li>
+                                    <li><a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a></li>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                                </ul>
+                            </li>
                         @endguest
                     </div>
                     <div class="col-2 text-end">
