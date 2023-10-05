@@ -60,6 +60,14 @@ class PembayaranController extends Controller
             'email' => 'required|string|max:255',
             'alamat' => 'required|string|max:255',
             'bukti_pemb' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ],[
+            'nama.required' => "Silahkan isi Nama Lengkap",
+            'no_telp.required' => "Silahkan isi Nomor Telepon yang bisa dihubungi",
+            'email.required' => "Silahkan isi Email yang aktif",
+            'alamat.required' => "Silahkan isi Alamat",
+            'bukti_pemb.required' => "Silahkan Upload bukti pembayaran",
+            'bukti_pemb.image' => "File harus berjenis gambar",
+            'bukti_pemb.mimes' => "Jenis File yang diterima: jpeg, png, jpg",
         ]);
         // dd($validated);
 

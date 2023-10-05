@@ -3,6 +3,18 @@
 @section('content')
 <div class="container my-4">
 
+    <div class="border border-2 p-4 mb-3">
+        <h2 class="mb-4 text-center">Alamat Pembayaran</h2>
+        <h3>Bank BRI</h3>
+        <h4 class="mb-3 fw-semibold">058001035409504 a.n Mada</h4>
+        <h3>SHOPEEPAY</h3>
+        <h4 class="mb-3 fw-semibold">085790949384 a.n Mada</h4>
+        <h3>Ahmada Nurul Qomariyah</h3>
+        <div class="d-flex justify-content-center">
+            <img src="{{ asset("images/qris.jpeg") }}" alt="" class="mw-100">
+        </div>
+    </div>
+
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
