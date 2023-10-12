@@ -79,30 +79,39 @@
                             </div>
                         @endif
                         <div class="card-body">
-                            <form action="{{ route('modul.update',$moduls->id_modul) }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('modul.update', $moduls->id_modul) }}" method="post"
+                                enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <label>Name Modul</label></br>
 
                                 <input type="text" name="nama_modul" id="name" class="form-control"
-                                   value="{{ old('nama_modul',$moduls->nama_modul) }}" ></br>
+                                    value="{{ old('nama_modul', $moduls->nama_modul) }}"></br>
 
                                 <label>Name Kategori</label></br>
+
                                 <select class="form-select" name="id_kategori" aria-label="Default select example">
                                     <option selected>Pilih Kategori</option>
-                                    @foreach($kategoris as $kategori)
-                                    <option value="{{ $kategori->id_kategori }}">{{ $kategori->nama_kategori }}</option>
+                                    @foreach ($kategoris as $kategori)
+                                        @php
+                                            $kategorites = old('id_kategori', $kategori->id_kategori);
+                                        @endphp
+                                        <option value="{{ $kategori->id_kategori }}"
+                                            {{ $kategori->id_kategori == $kategorites ? 'selected' : '' }}>
+                                            {{ $kategori->nama_kategori }}</option>
                                     @endforeach
-                                  </select><br>
-                                  <label>Isi Modul</label></br>
-                                  <textarea type="text" name="isi_modul" class="form-control" value="{{ old('isi_modul',$moduls->isi_modul) }}" > {{ $moduls->isi_modul }}</textarea></br>
-                                  <label>Isi Teaser Modul</label></br>
-                                  <textarea type="text" name="isiteaser_modul" class="form-control">{{ old('isi_modul',$moduls->isiteaser_modul) }}</textarea></br>
-                                  <label>Input Gambar</label></br>
-                                  <input type="file" name="gambar_modul" id="name" class="form-control" value="{{ old('gambar_modul/'.$moduls->gambar_modul) }}"></br>
-                                  <label>Input Modul</label></br>
-                                  <input type="file" name="download_modul" class="form-control" value="{{ old('download_modul',$moduls->download_modul) }}"> </br>
-                                  <input type="submit" value="Save" class="btn btn-success"></br>
+                                </select><br>
+                                <label>Isi Modul</label></br>
+                                <textarea type="text" name="isi_modul" class="form-control" value="{{ old('isi_modul', $moduls->isi_modul) }}"> {{ $moduls->isi_modul }}</textarea></br>
+                                <label>Isi Teaser Modul</label></br>
+                                <textarea type="text" name="isiteaser_modul" class="form-control">{{ old('isi_modul', $moduls->isiteaser_modul) }}</textarea></br>
+                                <label>Input Gambar</label></br>
+                                <input type="file" name="gambar_modul" id="name" class="form-control"
+                                    value="{{ old('gambar_modul/' . $moduls->gambar_modul) }}"></br>
+                                <label>Input Modul</label></br>
+                                <input type="file" name="download_modul" class="form-control"
+                                    value="{{ old('download_modul', $moduls->download_modul) }}"> </br>
+                                <input type="submit" value="Save" class="btn btn-success"></br>
                             </form>
                         </div>
                     </div>

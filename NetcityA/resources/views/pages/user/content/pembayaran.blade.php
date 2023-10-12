@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container vh-100">
-        @if ($pembayarans)
+        @if (count($pembayarans)>0)
             <div class="mt-3">
             @foreach ($pembayarans as $pembayaran)
             <div class="card mb-3" style="">
@@ -21,7 +21,10 @@
             @endforeach
             </div>
         @else
-            <p class="mb-3">Belum ada Pembayaran...</p>
+        <div class="col-lg-13" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;">
+            <p class="text-dark font-weight-bold text-center"
+                style="font-size: 40px; line-height: 1.5; padding: 50px 0;">Belum ada pembayaran ..</p>
+        </div>
         @endif
     </div>
 @endsection

@@ -9,7 +9,7 @@
             <div class="row justify-content-center mb-3">
                 <div class="col-md-8 text-center">
                     <h1 class="font-weight-bold" style="text-decoration: underline;">Net <span
-                            style="color: rgba(206, 245, 61, 0.8);">City.</span></h1>
+                            style="color: rgba(145, 255, 0, 0.8);">City.</span></h1>
                 </div>
             </div>
             <!-- /Judul Besar Net City -->
@@ -45,7 +45,7 @@
     <div class="row justify-content-center mb-4">
         <div class="col-md-8 text-center">
             <h1 class="font-weight-bold" style="text-decoration: underline;">
-                Modul <span style="color: rgba(206, 245, 61, 0.8);">Modul</span>
+                Modul <span style="color: rgba(145, 255, 0, 0.8);">Modul</span>
             </h1>
         </div>
     </div>
@@ -80,11 +80,12 @@
                                     </div>
                                 </div>
                             @endforeach
-                        @else
+                       @else
                             <div class="col-lg-12 bg-light">
                                 <p class="text-dark font-weight-bold text-center"
                                     style="font-size: 24px; line-height: 1.5; padding: 20px 0;">Coming Soon</p>
                             </div>
+
                         @endif
                     </div>
                 </div>

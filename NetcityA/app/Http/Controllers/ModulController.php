@@ -8,6 +8,7 @@ use App\Http\Requests\UpdatemodulRequest;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 class ModulController extends Controller
@@ -108,7 +109,7 @@ class ModulController extends Controller
 
             $gambar= $request->file('gambar_modul')->getClientOriginalName();
             $request->file('gambar_modul')->move(public_path('imgModul'), $gambar);
-
+            File::delete(public_path('imgModul').'/'.$modul->gambar_modul);
             $validateddata['gambar_modul']=$gambar;
         }
 
@@ -119,19 +120,10 @@ class ModulController extends Controller
 
             $file= $request->file('download_modul')->getClientOriginalName();
             $request->file('download_modul')->move(public_path('fileModul'), $file);
-
-
-          $validateddata['download_modul']=$file;
+            File::delete(public_path('fileModul').'/'.$modul->download_modul);
+            $validateddata['download_modul']=$file;
         }
 
-        $modulFoto = $modul->gambar_modul;
-        $modulFile = $modul->download_modul;
-        if($modulFoto != null || $modulFoto!=''){
-            Storage::delete($modulFoto);
-        }
-        if($modulFile != null || $modulFile!=''){
-            Storage::delete($modulFile);
-        }
         $modul->update($validateddata);
         $modul->kategori()->associate($request->input('id_kategori'));
         $modul->save();
